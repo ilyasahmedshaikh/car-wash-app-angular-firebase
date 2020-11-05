@@ -9,6 +9,14 @@ const routes: Routes = [
   {
     path: 'payment',
     loadChildren: () => import('./components/payment/payment.module').then(m => m.PaymentModule)
+  },
+  {
+    path: 'homepage',
+    loadChildren: () => import('./components/homepage/homepage.module').then(m => m.HomepageModule)
+  },
+  {
+    path: 'service-request',
+    loadChildren: () => import('./components/service-request/service-request.module').then(m => m.ServiceRequestModule)
   }
 ];
 

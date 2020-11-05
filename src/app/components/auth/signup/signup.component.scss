@@ -1,0 +1,50 @@
+.signup-screen .heading h1{
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 0px;
+}
+
+.social-bar .or p {
+    font-size: 18px;
+    color: black;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.social-bar .or p::before {
+    content: "";
+    position: absolute;
+    top: 52%;
+    left: 0%;
+    width: 44%;
+    height: 2px;
+    background-color: #d4d4d4;
+}
+
+.social-bar .or p::after {
+    content: "";
+    position: absolute;
+    top: 52%;
+    right: 0%;
+    width: 44%;
+    height: 2px;
+    background-color: #d4d4d4;
+}
+
+.social-bar .icons ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0;
+}
+
+.social-bar .icons ul li {
+    padding: 0 15px;
+}
+
+.social-bar .icons ul li a i {
+    font-size: 28px;
+    color: black;
+}

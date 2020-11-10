@@ -1,0 +1,124 @@
+@import '/src/styles.scss';
+
+.header {
+    background: $main;
+    height: 55px;
+}
+
+.toggleContainer {
+    cursor: pointer;
+    position: fixed;
+    top: 8px;
+    left: 20px;
+    z-index: 3;
+  }
+
+.bar1, .bar2, .bar3 {
+    border-radius: 10px;
+    width: 35px;
+    height: 4px;
+    background-color: $white;
+    margin: 6px 0;
+    transition: 0.5s;
+  }
+  
+  .change {
+    .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6px);
+        background-color: $white;
+      }
+      .bar2 {opacity: 0;}
+      .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+        background-color: $white;
+      }
+  }
+
+.sidebar{
+    a {
+        text-decoration: none;
+        color: $white;
+        text-transform: capitalize;
+    }
+    ul {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding: 50% 0 0 5%;
+        li {
+            padding: 10px 0 10px 0;
+            a {
+                text-decoration: none;
+                color: $white;
+                font-size: 20px;
+                font-weight: 500;
+                transition: 0.3s;
+                &:hover {
+                    color: $black;
+                }
+                img {
+                    width: 40px;
+                    background: $lightDefault;
+                    padding: 2px;
+                    border-radius: 50%;
+                    margin: 0 10px 0 0;
+                }
+            }
+        }
+    }
+    &.side {
+        position: fixed;
+        width: 50%;
+        background: $default;
+        color: $white;
+        left: -50%;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        transition: 0.8s;
+        &.show{
+            left: 0;
+        }
+    }
+    &.flap {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: $default;
+        color: $white;
+        top: -100%;
+        z-index: 1;
+        transition: 0.8s;
+        &.show{
+            top: 0;
+        }
+    }
+    .bottom-thing{
+        position: fixed;
+        bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar.side {
+        width: 100%;
+        left: -100%;
+    }
+}
+
+.fade-area {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    opacity: 0.5;
+    transition: 0.5s;
+    &.show{
+        display: block;
+    }
+}

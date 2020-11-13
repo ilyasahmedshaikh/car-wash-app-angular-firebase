@@ -1,0 +1,30 @@
+@import '/src/styles.scss';
+
+.heading {
+    @include typography($fontSize: 17px, $fontWeight: 500, $color: $darkDefault, $padding: 0);
+}
+
+.scrollmenu {
+    @include scroll-menu($width: 28%, $padding: 14px, $background: $white, $color: $darkDefault);
+    .image-container {
+        background-color: $lightGray;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        img {
+            &.small {
+                position: relative;
+                top: 15px;
+                width: 70%;
+            }
+            &.large {
+                width: 100%;
+                padding-top: 25px;
+            }
+        }
+    }
+    p {
+        font-size: 14px;
+        padding: 5px 0 0 0;
+    }
+}

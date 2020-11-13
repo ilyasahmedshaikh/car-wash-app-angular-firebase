@@ -1,15 +1,13 @@
 @import '/src/styles.scss';
 
 .forget-screen .heading h1{
-    font-size: 25px;
-    font-weight: 600;
-    color: black;
+    font-size: 18px;
+    color: $lightDefault;
     margin-bottom: 0px;
 }
 
 .forget-screen .heading p{
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
     color: slategray;
     margin-bottom: 0px;
 }

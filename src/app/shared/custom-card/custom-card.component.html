@@ -1,0 +1,67 @@
+<!-- grid card  -->
+<div class="custom-card mb-3" *ngIf="cardType == 'grid'">
+    <div class="image">
+        <img src="{{data.imgUrl}}" alt="{{data.name}}">
+
+        <p class="price" *ngIf="data.amount" [ngClass]="{'bg-gradient-1': data.type == 'mini-size', 
+                        'bg-gradient-2': data.type == 'compact-suv' || data.type == 'standard-suv',
+                        'bg-gradient-3': data.type == 'compact-car',
+                        'bg-gradient-4': data.type == 'mini-van' }">
+            <span>Rs. </span>
+            <strong>{{data.amount}}</strong>
+        </p>
+    </div>
+    <div class="content">
+        <h3 class="text-truncate" *ngIf="data.name">{{data.name}}</h3>
+        <p *ngIf="data.contact">{{data.contact}}</p>
+        <p *ngIf="data.owner" class="text-muted">{{data.owner}}</p>
+        <p *ngIf="data.location" class="text-muted">{{data.location}}</p>
+        <p *ngIf="data.notificationType" class="text-muted"><small>{{data.notificationType}}</small></p>
+
+        <div *ngIf="data.categories">
+            <span class="category-chip" *ngFor="let item of data.categories" [ngClass]="{'bg-gradient-1': item == 'mini-size', 
+                'bg-gradient-2': item == 'compact-suv' || item.type == 'standard-suv',
+                'bg-gradient-3': item == 'compact-car',
+                'bg-gradient-4': item == 'mini-van' }">
+                {{item}}
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- list card  -->
+<div class="custom-card my-3" *ngIf="cardType == 'list'">
+    <div class="row">
+        <div class="col-4">
+            <div class="image list">
+                <img src="{{data.imgUrl}}" alt="{{data.name}}">
+            </div>
+        </div>
+    
+        <div class="col-8">
+            <div class="content">
+                <h3 *ngIf="data.name">{{data.name}}</h3>
+                <p *ngIf="data.amount" class="price" [ngClass]="{'bg-gradient-1': data.type === 'mini-size', 
+                                'bg-gradient-2': data.type === 'compact-suv' || data.type == 'standard-suv',
+                                'bg-gradient-3': data.type === 'compact-car',
+                                'bg-gradient-4': data.type === 'mini-van' }">
+                    <span>Rs. </span>
+                    <strong>{{data.amount}}</strong>
+                </p>
+                <p *ngIf="data.contact">{{data.contact}}</p>
+                <p *ngIf="data.owner" class="text-muted">{{data.owner}}</p>
+                <p *ngIf="data.location" class="text-muted">{{data.location}}</p>
+                <p *ngIf="data.notificationType" class="text-muted"><small>{{data.notificationType}}</small></p>
+            </div>
+            
+            <div *ngIf="data.categories">
+                <span class="category-chip" *ngFor="let item of data.categories" [ngClass]="{'bg-gradient-1': item === 'mini-size', 
+                    'bg-gradient-2': item === 'compact-suv' || item.type == 'standard-suv',
+                    'bg-gradient-3': item === 'compact-car',
+                    'bg-gradient-4': item === 'mini-van' }">
+                    {{item}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

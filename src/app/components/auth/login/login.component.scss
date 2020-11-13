@@ -5,8 +5,19 @@
 }
 
 .login-screen .heading h1{
-    font-size: 25px;
-    font-weight: 600;
-    color: black;
+    font-size: 18px;
+    color: $lightDefault;
     margin-bottom: 0px;
+}
+
+.login-screen .account-text span {
+    color: $black;
+    font-size: 13px;
+}
+
+.login-screen .account-text a {
+    font-weight: 600;
+    color: $lightDefault;
+    font-size: 14px;
+    padding-left: 5px;
 }

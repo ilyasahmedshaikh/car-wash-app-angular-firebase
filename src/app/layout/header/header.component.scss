@@ -1,8 +1,11 @@
 @import '/src/styles.scss';
 
 .header {
-    background: $main;
+    background: $default;
     height: 55px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .toggleContainer {
@@ -76,7 +79,7 @@
         left: -50%;
         top: 0;
         bottom: 0;
-        z-index: 2;
+        z-index: 16;
         transition: 0.8s;
         &.show{
             left: 0;
@@ -96,7 +99,7 @@
         }
     }
     .bottom-thing{
-        position: fixed;
+        position: absolute;
         bottom: 5%;
     }
 }

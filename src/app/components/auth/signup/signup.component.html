@@ -1,50 +1,57 @@
 <div class="signup-screen">
-    <div class="heading">
-        <h1>SIGN UP</h1>
-    </div>
-
-    <form class="pt-5">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputUserName">User Name</label>
-              <input type="text" class="form-control" id="inputUserName">
-            </div>
-            
-            <div class="form-group col-md-6">
-				<label for="inputEmail4">Email</label>
-				<input type="email" class="form-control" id="inputEmail4">
+	<div class="container">
+		<div class="heading pt-4">
+			<h1>SIGN UP</h1>
+		</div>
+	
+		<form class="pt-4">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+				  <label>User Name</label>
+				  <input type="text" class="form-control" id="inputUserName">
+				</div>
+				
+				<div class="form-group col-md-6">
+					<label>Email</label>
+					<input type="email" class="form-control" id="inputEmail4">
+				</div>
+			  </div>
+	
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Password</label>
+					<input type="password" class="form-control" id="inputPassword4">
+				</div>
+	
+				<div class="form-group col-md-6">
+					<label>Confirm Password</label>
+					<input type="cpassword" class="form-control" id="inputCPassword4">
+				</div>
 			</div>
-          </div>
-
-        <div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="inputPassword4">Password</label>
-				<input type="password" class="form-control" id="inputPassword4">
+	
+			<a href="#" class="rounded-btn w-100 mt-3">Sign Up</a>
+		</form>
+		  
+		<div class="social-bar pt-4">
+			<div class="or">
+				<p>or</p>
 			</div>
-
-			<div class="form-group col-md-6">
-				<label for="inputCPassword4">Confirm Password</label>
-				<input type="cpassword" class="form-control" id="inputCPassword4">
+	
+			<div class="row justify-content-center">
+				<div class="icons">
+					<ul>
+						<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+						<li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+						<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+				</div>
 			</div>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100 mt-3">Sign Up</button>
-	  </form>
-	  
-	  <div class="social-bar pt-4">
-		<div class="or">
-			<p>or</p>
 		</div>
 
-		<div class="row justify-content-center">
-			<div class="icons">
-				<ul>
-					<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-					<li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
-					<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-				</ul>
-			</div>
+		<div class="account-text pt-4 text-center">
+			<span>Have an Account?</span>
+			<a routerLink="/auth/login">Sign In</a> 
 		</div>
-	  </div>
+	</div>
 </div>

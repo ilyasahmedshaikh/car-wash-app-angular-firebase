@@ -25,7 +25,15 @@ const routes: Routes = [
   {
     path: 'service-request',
     loadChildren: () => import('./components/service-request/service-request.module').then(m => m.ServiceRequestModule)
-  }
+  },
+  {
+    path: 'packages',
+    loadChildren: () => import('./components/packages/packages.module').then(m => m.PackagesModule)
+  },
+  {
+    path: 'package-details',
+    loadChildren: () => import('./components/package-details/package-details.module').then(m => m.PackageDetailsModule)
+  },
 ];
 
 @NgModule({

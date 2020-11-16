@@ -1,0 +1,41 @@
+@import '/src/styles.scss';
+
+.package-details-screen .car-area
+{
+    width: 100%;
+    height: 50vh;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.content-card {
+    background: $white;
+    border-radius: 40px 40px 0 0px;
+    position: relative;
+    top: -85px;
+}
+
+.content-card .heading {
+    color: $lightDefault;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content-card .price {
+    color: $black;
+    font-size: 18px;
+}
+
+.content-card .category {
+    color: $black;
+    font-size: 16px;
+}
+
+.badge {
+    &.badge-pill {
+        padding: 10px 20px;
+        font-size: 13px;
+        margin: 5px;
+    }
+}

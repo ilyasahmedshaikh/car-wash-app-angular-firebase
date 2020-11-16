@@ -6,7 +6,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6" *ngFor="let item of topRecent; index as i;">
+            <div class="col-6" *ngFor="let item of topRecent; index as i;" routerLink="/package-details">
                 <app-custom-card class="app-custom-card" [data]="item" [cardType]="cardType" routerLink="/posts/details"></app-custom-card>
             </div>
         </div>

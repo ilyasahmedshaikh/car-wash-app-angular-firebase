@@ -8,8 +8,11 @@
             <div class="col-6">
                 <div class="add-img">
                     <form>
-                        <input class="d-none" type="file" accept="image/*" #file>
-                        <a (click)="file.click()"><img src="../../../../assets/img/img-upload-icon.png"></a>
+                        <input class="d-none" type="file" accept="image/*" #file (change)="uploadFile($event)">
+                        <a (click)="file.click()">
+                            <img *ngIf="!imageUploaded" src={{preview}}>
+                            <img *ngIf="imageUploaded" src={{loading}}>
+                        </a>
                     </form>
                 </div>
             </div>

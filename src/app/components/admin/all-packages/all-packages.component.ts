@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-all-packages',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllPackagesComponent implements OnInit {
 
-  constructor() { }
+  data: any = [];
+
+  constructor(
+    private fireStore: AngularFirestore
+  ) {}
 
   ngOnInit(): void {
+    this.getPackages();
+  }
+
+  getPackages() {
+
+    this.fireStore.collection("packages").get().subscribe((res) => {
+      res.docs.forEach((doc) => {
+        this.data.push(doc.data());
+      });
+    });
+
+    console.log(this.data);
   }
 
 }

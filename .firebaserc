@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dirt2clean-c1824": {
+      "hosting": {
+        "angular-boilerplate": [
+          "dirt2clean-c1824"
+        ]
+      }
+    }
+  }
+}

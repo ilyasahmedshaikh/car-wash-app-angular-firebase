@@ -11,6 +11,31 @@
 <div class="sidebar side" [ngClass]="{'show': sidebar}">
     <ul>
         <li>
+            <a (click)="routeTo('/admin')">
+                Admin
+            </a>
+        </li>
+        <li>
+            <a (click)="routeTo('/admin/all-categories')">
+                All Categories
+            </a>
+        </li>
+        <li>
+            <a (click)="routeTo('/admin/add-category')">
+                Add Category
+            </a>
+        </li>
+        <li>
+            <a (click)="routeTo('/admin/all-packages')">
+                All Packages
+            </a>
+        </li>
+        <li>
+            <a (click)="routeTo('/admin/add-package')">
+                Add Package
+            </a>
+        </li>
+        <li>
             <a (click)="routeTo('/homepage')">
                 Home
             </a>

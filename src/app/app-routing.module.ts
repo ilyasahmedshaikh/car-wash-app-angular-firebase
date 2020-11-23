@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./components/homepage/homepage.module').then(m => m.HomepageModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./components/service-request/service-request.module').then(m => m.ServiceRequestModule)
-  },
-  {
     path: 'service-request',
     loadChildren: () => import('./components/service-request/service-request.module').then(m => m.ServiceRequestModule)
   },
@@ -33,6 +29,10 @@ const routes: Routes = [
   {
     path: 'package-details',
     loadChildren: () => import('./components/package-details/package-details.module').then(m => m.PackageDetailsModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
   },
 ];
 

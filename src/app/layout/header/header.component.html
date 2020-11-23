@@ -1,9 +1,14 @@
 <div class="header py-3">
     <div class="container">
-        <div class="toggleContainer" (click)="toggleMenu()" [ngClass]="{'change': toggleButton}">
+        <div class="toggleContainer" (click)="toggleMenu()" [ngClass]="{'change': toggleButton}" *ngIf="!backBtnState">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
+        </div>
+        <div class="back-btn" *ngIf="backBtnState">
+            <a (click)="back()">
+                <i class="fas fa-chevron-left"></i>
+            </a>
         </div>
     </div>
 </div>

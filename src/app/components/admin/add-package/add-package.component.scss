@@ -1,0 +1,16 @@
+@import '/src/styles.scss';
+
+.add-package-screen .heading h1{
+    font-size: 18px;
+    color: $lightDefault;
+    margin-bottom: 0px;
+}
+
+.add-package-screen .add-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 10px #e7e7e7;
+    border-radius: 25px;
+}

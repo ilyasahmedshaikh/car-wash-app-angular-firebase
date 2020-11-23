@@ -9,7 +9,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 const routes: Routes = [
   {
     path: '',
-    component: AllPackagesComponent
+    component: AddPackageComponent
   },
   {
     path: 'all-packages',

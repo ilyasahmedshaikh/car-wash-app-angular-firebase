@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-all-packages',
@@ -19,14 +19,11 @@ export class AllPackagesComponent implements OnInit {
   }
 
   getPackages() {
-
     this.fireStore.collection("packages").get().subscribe((res) => {
       res.docs.forEach((doc) => {
         this.data.push(doc.data());
       });
     });
-
-    console.log(this.data);
   }
 
 }

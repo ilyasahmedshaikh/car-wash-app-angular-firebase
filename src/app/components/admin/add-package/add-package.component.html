@@ -7,39 +7,39 @@
         <div class="row justify-content-center my-4">
             <div class="col-6">
                 <div class="add-img">
-                    <form>
-                        <input class="d-none" type="file" accept="image/*" #file (change)="uploadFile($event)">
-                        <a (click)="file.click()">
-                            <img *ngIf="!imageUploaded" src={{preview}}>
-                            <img *ngIf="imageUploaded" src={{loading}}>
-                        </a>
-                    </form>
+                    <input class="d-none" type="file" accept="image/*" #file (change)="uploadFile($event)">
+                    <a (click)="file.click()">
+                        <img *ngIf="!imageUploaded" src={{preview}}>
+                        <img *ngIf="imageUploaded" src={{loading}}>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <label>Package Name</label>
-            <input type="text" class="form-control" placeholder="Package Name">
-        </div>
-        <div class="form-group">
-            <label>Package Price</label>
-            <input type="text" class="form-control" placeholder="Package Price">
-        </div>
-        <div class="form-group">
-            <label>Categories</label>
-            <select class="custom-select form-control">
-                <option selected>Select Category</option>
-                <option value="1">Mini Size</option>
-                <option value="2">Compact Suv</option>
-                <option value="2">Standard Suv</option>
-                <option value="3">Compact Car</option>
-                <option value="4">Mini Van</option>
-            </select>
-        </div>
+        <form [formGroup]="programForm">
+            <div class="form-group">
+                <label>Package Name</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Package Name">
+            </div>
+            <div class="form-group">
+                <label>Package Price</label>
+                <input type="text" class="form-control" formControlName="price" placeholder="Package Price">
+            </div>
+            <div class="form-group">
+                <label>Categories</label>
+                <select class="custom-select form-control" formControlName="category">
+                    <option>Select Category</option>
+                    <option value="1">Mini Size</option>
+                    <option value="2">Compact Suv</option>
+                    <option value="3">Standard Suv</option>
+                    <option value="4">Compact Car</option>
+                    <option value="5">Mini Van</option>
+                </select>
+            </div>
+        </form>
 
         <div class="add-package-btn">
-            <a href="#" class="rounded-btn w-100 mt-4">Add Package</a>
+            <a (click)="addPackage()" class="rounded-btn w-100 mt-4">Add Package</a>
         </div>
 	</div>
 </div>

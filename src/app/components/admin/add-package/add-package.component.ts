@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
@@ -11,7 +13,9 @@ import { finalize } from 'rxjs/operators';
 })
 export class AddPackageComponent implements OnInit {
 
-  private packageCollection: AngularFirestoreCollection<any>;
+  programForm: FormGroup;
+
+  packageCollection: string = "packages";
   data: any = [];
 
   preview: any = "../../../../assets/img/img-upload-icon.png";
@@ -22,26 +26,39 @@ export class AddPackageComponent implements OnInit {
   imageUploaded: boolean = false;
 
   constructor(
+    private router: Router,
     private fireStore: AngularFirestore,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.getPackages();
+    this.formInit();
   }
 
-  getPackages() {
-    this.fireStore.collection("packages").get().subscribe((res) => {
-      res.docs.forEach((doc) => {
-        this.data.push(doc.data());
-      });
+  formInit() {
+    this.programForm = this.fb.group({
+      name: ['', Validators.required],
+      price: ['', Validators.required],
+      category: ['', Validators.required]
     });
-
-    console.log(this.data);
   }
 
-  addPackage(item) {
-    this.packageCollection.add(item);
+  addPackage() {
+    this.fireStore.collection(this.packageCollection).add({
+      image: this.preview,
+      name: this.programForm.value.name,
+      price: this.programForm.value.price,
+      category: this.programForm.value.category,
+    })
+    .then(res => {
+      // console.log(res);
+      this.router.navigateByUrl("/admin/all-packages");
+      this.programForm.reset();
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 
   uploadFile(event) {
@@ -62,7 +79,7 @@ export class AddPackageComponent implements OnInit {
         this.downloadURL = fileRef.getDownloadURL();
         this.downloadURL.subscribe(res => {
           this.preview = res;
-          
+
           this.imageUploaded = !this.imageUploaded;
         });
       })

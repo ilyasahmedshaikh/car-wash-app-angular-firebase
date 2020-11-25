@@ -1,0 +1,138 @@
+{
+  "configVersion": 1,
+  "timestamp": 1606339492353,
+  "index": "https://ilyasahmedshaikh.github.io/angular-boilerplate/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/10.0fd339fa31c38441f189.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/11.304c685b11fc88614c7c.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/12.ea84eb1214f050e9e259.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/13.101d3d92e1870af36245.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/2.03560017b8899f613446.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/6.21e41e435c499774aece.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/7.e108556bc5f724ba4069.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/8.17d472152502ccf94312.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/9.b7977e84313ba931dd25.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/common.91caf411c4eabb85ea35.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/favicon.ico",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/index.html",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/main.ea9e259c0ce75c2338d2.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/manifest.webmanifest",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/polyfills.8456b03b9e12a1d468e8.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/runtime.b9778a208955e957f790.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/styles.8e4b6b4e7936681232d1.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-128x128.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-144x144.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-152x152.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-192x192.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-384x384.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-512x512.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-72x72.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-96x96.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/1.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/2.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/3.jpg",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/4.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/5.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/6524599_preview.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/c.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/content-loading.gif",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/g.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/img-upload-icon.png",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/loading.gif",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/js/bootstrap.min.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/js/jquery.min.js",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/base.scss",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/bootstrap.min.css",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/buttons.scss",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/colours.scss",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/mixins.scss",
+        "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/variables.scss"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/10.0fd339fa31c38441f189.js": "e0d0fc5690da635f06247fab50b311524ef18726",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/11.304c685b11fc88614c7c.js": "4797f651c23128a59805b7e35f811fe618eee55f",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/12.ea84eb1214f050e9e259.js": "983237769583949db4452f9e0ee3b338967a4a76",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/13.101d3d92e1870af36245.js": "d1e29c29d17eb2f20bab787e8046cb6747f2cf38",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/2.03560017b8899f613446.js": "ef97fbe268bd146b459240e7b6a23366a6faefee",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/6.21e41e435c499774aece.js": "87ff9ab29d99090116bfa7745b6d9af5a74bcf0d",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/7.e108556bc5f724ba4069.js": "6444f7cb3f57d80c5e003ba4dc70b959df349279",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/8.17d472152502ccf94312.js": "670ba744d06f1bc372a91aa4210f5c6cadce77b2",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/9.b7977e84313ba931dd25.js": "6581093c4a4be074a9b7348d5e766060d876172b",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/1.png": "3ba28ddfdde066d31f73bc75ae205d26422d8584",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/2.png": "0672068e574f54b6fde242f403185f6066298570",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/3.jpg": "42c7d181176250494a430cd0e44dc1c8ee9ef104",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/4.png": "e38ba4dcb1222019ba45fd104f7a6bebf521d2c9",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/5.png": "e36cfa7f28443509cdd9e84a59fab47d573c54dc",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/6524599_preview.png": "530cd3e97ee05dbead9c4d90d45475fc7daca613",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/c.png": "01bf5800aedc1520f0abf45d7368bcb652ad7f04",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/content-loading.gif": "0d9e6940e726cd116a45e005a73792917c5f9520",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/g.png": "2db9ecc84e7639c21cdee5afbc76df58451cc263",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/img-upload-icon.png": "f147f8f223a81c502f930d9548a8cfc643148b1b",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/img/loading.gif": "cfe67b2c4704546a194343ad1f9207ba50abd841",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/js/bootstrap.min.js": "0c4e8445f6f0c9611dc1c13dc6f085eb4bcaca0b",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/js/jquery.min.js": "29fa5ad995e9ec866ece1d3d0b698fc556580eee",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/base.scss": "90930f770d5ea5bd29f55e26ec73db0d6709c00c",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/bootstrap.min.css": "8ed2d6350d23f857d92805737d0f97c675de666b",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/buttons.scss": "2ea73a8018d9ba28c989187e32ee03f46cde7e80",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/colours.scss": "a424861f846666d79003b63b01fd8709c842f9f6",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/mixins.scss": "0cea23c2a19274d00ad6072dc8d09adb2617a2bd",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/assets/scss/variables.scss": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/common.91caf411c4eabb85ea35.js": "eb5224825381c6b6acc69bc9ad184b170f4da0c0",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/index.html": "440859a70b9202c9761e76397d64f5509c935b6f",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/main.ea9e259c0ce75c2338d2.js": "1e25f144ba4d09f078307c78135b3df30a60f466",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/manifest.webmanifest": "a7b9306170ec6e2dcb377979ec5cadab94c52e43",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/polyfills.8456b03b9e12a1d468e8.js": "2dcfebbcebb2ac3b3ffca5ed0b4062735c4d8c83",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/runtime.b9778a208955e957f790.js": "6c0d18ee5e2da4e7e9b7ee882f88c10a94500669",
+    "https://ilyasahmedshaikh.github.io/angular-boilerplate/styles.8e4b6b4e7936681232d1.css": "7f90b395300dc99897ab3069f23e00d2f8f49f98"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

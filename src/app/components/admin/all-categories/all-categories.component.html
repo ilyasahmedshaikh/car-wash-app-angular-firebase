@@ -4,7 +4,7 @@
 			<h1>All Categories</h1>
         </div>
 
-        <div class="categories-cards" *ngIf="data.length > 0">
+        <!-- <div class="categories-cards" *ngIf="data.length > 0">
             <div class="card mt-4" *ngFor="let item of data">
                 <img class="card-img-top" src={{item.image}}>
                 <div class="card-body">
@@ -22,12 +22,37 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+            
+            <div class="categories-cards pb-5" *ngIf="data.length > 0">
+                <div *ngFor="let item of data">
+                    <div class="card mt-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="card-img-top" src={{item.image}}>
+                            </div>
+                            <div class="col-7 pl-0">
+                                <div class="content py-2">
+                                    <!-- <p class="id"><strong>ID:</strong> {{item.id}}</p> -->
+                                    <h5 class="package pb-3">{{item.name}}</h5>
+    
+                                    <div class="row">
+                                        <div class="col-12 icons">
+                                            <a routerLink="/admin/add-package"><i class="fas fa-eye"></i></a>
+                                            <a routerLink="/admin/add-package"><i class="px-4 fas fa-pencil-alt"></i></a>
+                                            <a><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="text-center pt-5" *ngIf="data.length == 0">
                 <img src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
             </div>
 
-        </div>
     </div>
 </div>

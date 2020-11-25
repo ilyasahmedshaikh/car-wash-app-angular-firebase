@@ -6,6 +6,27 @@
     margin-bottom: 0px;
 }
 
-.card .card-body .icons i {
+.icons i {
     color: $lightDefault;
+}
+
+.card .price{
+    // margin-top: 10px;
+    // border: 1px solid $lightDefault;
+    // border-radius: 50px;
+    // padding: 4px 0px;
+    // text-align: center;
+    // width: 100%;
+    // color: $white;
+    // background-color: $lightDefault;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 3px 0 0 3px;
 }

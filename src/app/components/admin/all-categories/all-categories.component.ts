@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { setTimeout } from 'timers';
 
 @Component({
   selector: 'app-all-categories',

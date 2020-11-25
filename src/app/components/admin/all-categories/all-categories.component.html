@@ -4,14 +4,14 @@
 			<h1>All Categories</h1>
         </div>
 
-        <div class="categories-cards">
-            <div class="card mt-4">
-                <img class="card-img-top" src="../../../../assets/img/3.jpg">
+        <div class="categories-cards" *ngIf="data.length > 0">
+            <div class="card mt-4" *ngFor="let item of data">
+                <img class="card-img-top" src={{item.image}}>
                 <div class="card-body">
-                    <p class="id"><strong>ID:</strong> 547896</p>
+                    <p class="id"><strong>ID:</strong> {{item.id}}</p>
                     <div class="row pt-2">
                         <div class="col-6">
-                            <h6 class="category">Standard SUV</h6>
+                            <h6 class="category">{{item.name}}</h6>
                         </div>
                         <div class="col-6">
                             <div class="icons text-right">
@@ -23,78 +23,11 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-4">
-                <img class="card-img-top" src="../../../../assets/img/c.png">
-                <div class="card-body">
-                    <p class="id"><strong>ID:</strong> 547896</p>
-                    <div class="row pt-2">
-                        <div class="col-6">
-                            <h6 class="category">Standard SUV</h6>
-                        </div>
-                        <div class="col-6">
-                            <div class="icons text-right">
-                                <i routerLink="/admin/add-category"class="fas fa-eye"></i>
-                                <i routerLink="/admin/add-category"class="px-4 fas fa-pencil-alt"></i>
-                                <i class="fas fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="text-center pt-5" *ngIf="data.length == 0">
+                <img src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
             </div>
-            <div class="card mt-4">
-                <img class="card-img-top" src="../../../../assets/img/5.png">
-                <div class="card-body">
-                    <p class="id"><strong>ID:</strong> 547896</p>
-                    <div class="row pt-2">
-                        <div class="col-6">
-                            <h6 class="category">Standard SUV</h6>
-                        </div>
-                        <div class="col-6">
-                            <div class="icons text-right">
-                                <i routerLink="/admin/add-category"class="fas fa-eye"></i>
-                                <i routerLink="/admin/add-category"class="px-4 fas fa-pencil-alt"></i>
-                                <i class="fas fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-4">
-                <img class="card-img-top" src="../../../../assets/img/4.png">
-                <div class="card-body">
-                    <p class="id"><strong>ID:</strong> 547896</p>
-                    <div class="row pt-2">
-                        <div class="col-6">
-                            <h6 class="category">Standard SUV</h6>
-                        </div>
-                        <div class="col-6">
-                            <div class="icons text-right">
-                                <i routerLink="/admin/add-category"class="fas fa-eye"></i>
-                                <i routerLink="/admin/add-category"class="px-4 fas fa-pencil-alt"></i>
-                                <i class="fas fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-4">
-                <img class="card-img-top" src="../../../../assets/img/1.png">
-                <div class="card-body">
-                    <p class="id"><strong>ID:</strong> 547896</p>
-                    <div class="row pt-2">
-                        <div class="col-6">
-                            <h6 class="category">Standard SUV</h6>
-                        </div>
-                        <div class="col-6">
-                            <div class="icons text-right">
-                                <i routerLink="/admin/add-category"class="fas fa-eye"></i>
-                                <i routerLink="/admin/add-category"class="px-4 fas fa-pencil-alt"></i>
-                                <i class="fas fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

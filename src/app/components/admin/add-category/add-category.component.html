@@ -8,20 +8,24 @@
             <div class="col-6">
                 <div class="add-img">
                     <form>
-                        <input class="d-none" type="file" accept="image/*" #file>
-                        <a (click)="file.click()"><img src="../../../../assets/img/img-upload-icon.png"></a>
+                        <input class="d-none" type="file" accept="image/*" #file (change)="uploadFile($event)">
+                        <a (click)="file.click()">
+                            <img *ngIf="!imageUploaded" src={{preview}}>
+                            <img *ngIf="imageUploaded" src={{loading}}>
+                        </a>
                     </form>
                 </div>
             </div>
         </div>
 
-        <div class="category-input">
-            <!-- <label>Category Name</label> -->
-            <input type="text" class="form-control" placeholder="Category Name">
-        </div>
+        <form [formGroup]="programForm">
+            <div class="category-input">
+                <input type="text" class="form-control"  formControlName="name" placeholder="Category Name">
+            </div>
+        </form>
 
         <div class="add-category-btn mt-4">
-            <a href="#" class="rounded-btn w-100 mt-2">Add Category</a>
+            <a (click)="addCategory()" class="rounded-btn w-100 mt-2">Add Category</a>
         </div>
 	</div>
 </div>

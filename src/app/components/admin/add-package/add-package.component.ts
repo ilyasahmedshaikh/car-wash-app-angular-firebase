@@ -16,6 +16,7 @@ export class AddPackageComponent implements OnInit {
   programForm: FormGroup;
 
   packageCollection: string = "packages";
+  categories: any = [];
   data: any = [];
 
   preview: any = "../../../../assets/img/img-upload-icon.png";
@@ -34,6 +35,7 @@ export class AddPackageComponent implements OnInit {
 
   ngOnInit(): void {
     this.formInit();
+    this.getCategories();
   }
 
   formInit() {
@@ -85,6 +87,19 @@ export class AddPackageComponent implements OnInit {
       })
     )
     .subscribe();
+  }
+
+  getCategories() {
+    this.fireStore.collection("categories").get().subscribe((res) => {
+      res.docs.forEach((doc) => {
+        let item = {
+          id: doc.id,
+          image: doc.data()['image'],
+          name: doc.data()['name'],
+        }
+        this.categories.push(item);
+      });
+    });
   }
 
 }

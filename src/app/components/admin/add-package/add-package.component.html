@@ -29,11 +29,7 @@
                 <label>Categories</label>
                 <select class="custom-select form-control" formControlName="category">
                     <option>Select Category</option>
-                    <option value="1">Mini Size</option>
-                    <option value="2">Compact Suv</option>
-                    <option value="3">Standard Suv</option>
-                    <option value="4">Compact Car</option>
-                    <option value="5">Mini Van</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>
             </div>
         </form>

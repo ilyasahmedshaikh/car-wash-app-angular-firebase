@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
 
-  cardType: any = "grid";
+  @Input('categories') categories: any;
 
   slideConfig = {
     "slidesToShow": 2, 
@@ -15,12 +15,6 @@ export class SliderComponent implements OnInit {
     "arrows": false,
     "dots": true
   };
-
-  imageSources: any = [
-    'https://i.ytimg.com/vi/glzVsyDNMJg/hqdefault.jpg',
-    'https://i.ytimg.com/vi/syK1OOrbZrc/hqdefault.jpg',
-    'https://i.imgur.com/zPq0qkC.jpg'
-  ]
 
   constructor() { }
 

@@ -2,36 +2,15 @@
     <div class="container">
         <h3 class="heading">Categories</h3>
     </div>
-    <div class="scrollmenu">
-        <div class="item">
+    <div class="scrollmenu" *ngIf="categories.length > 0">
+        <div class="item" *ngFor="let item of categories">
             <div class="image-container">
-                <img class="large" src="http://www.toyotaairport.com/cars/toyota-corolla/1.png" alt="Category">
+                <img class="large" src={{item.image}} alt="Category">
             </div>
-            <p>Mini Size</p>
+            <p>{{item.name}}</p>
         </div>
-        <div class="item">
-            <div class="image-container">
-                <img class="large" src="http://www.toyotaairport.com/cars/toyota-corolla/1.png" alt="Category">
-            </div>
-            <p>Compact Suv</p>
-        </div>
-        <div class="item">
-            <div class="image-container">
-                <img class="large" src="http://www.toyotaairport.com/cars/toyota-corolla/2.png" alt="Category">
-            </div>
-            <p>Standard Suv</p>
-        </div>
-        <div class="item">
-            <div class="image-container">
-                <img class="large" src="http://www.toyotaairport.com/cars/toyota-corolla/1.png" alt="Category">
-            </div>
-            <p>Compact Car</p>
-        </div>
-        <div class="item">
-            <div class="image-container">
-                <img class="large" src="http://www.toyotaairport.com/cars/toyota-corolla/2.png" alt="Category">
-            </div>
-            <p>Mini Van</p>
-        </div>
+    </div>
+    <div *ngIf="categories.length == 0">
+        <img class="loading" src="../../../assets/img/loading.gif" />
     </div>
 </section>

@@ -19,6 +19,7 @@ $gradient-3: linear-gradient(to right, #ff512f, #dd2476);
 $gradient-4: linear-gradient(to right, #43cea2, #185a9d);
 $gradient-5: linear-gradient(to right, #00c6ff, #0072ff);
 
+.bg-gradient { background: $default; }
 .bg-gradient-1 { background: $gradient-1; }
 .bg-gradient-2 { background: $gradient-2; }
 .bg-gradient-3 { background: $gradient-3; }

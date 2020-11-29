@@ -18,6 +18,7 @@ export class AddPackageComponent implements OnInit {
   packageCollection: string = "packages";
   categories: any = [];
   data: any = [];
+  selectedCategory: any = {};
 
   preview: any = "../../../../assets/img/img-upload-icon.png";
   loading: any = "../../../../assets/img/loading.gif";
@@ -51,7 +52,7 @@ export class AddPackageComponent implements OnInit {
       image: this.preview,
       name: this.programForm.value.name,
       price: this.programForm.value.price,
-      category: this.programForm.value.category,
+      category: this.selectedCategory,
     })
     .then(res => {
       // console.log(res);
@@ -61,6 +62,12 @@ export class AddPackageComponent implements OnInit {
     .catch(e => {
       console.log(e);
     })
+  }
+
+  onCategorySelect(e) {
+    let categoryId = e.target.value;
+    let category = this.categories.filter(item => item.id == categoryId);
+    this.selectedCategory = category
   }
 
   uploadFile(event) {

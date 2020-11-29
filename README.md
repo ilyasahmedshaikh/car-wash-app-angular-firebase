@@ -17,6 +17,9 @@ https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md
 # Angular Firestore CRUD
 https://blog.logrocket.com/creating-a-crud-firebase-documents-in-angular/
 
+# Angular Firestore Collection Querying
+https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md
+
 # Angular Fire Storage - Image Upload
 https://github.com/angular/angularfire/blob/master/docs/storage/storage.md
 

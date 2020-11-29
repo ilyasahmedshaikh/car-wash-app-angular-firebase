@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { PackagesService } from '../../core/services/packages/packages.service';
 
 @Component({
   selector: 'app-packages',
@@ -10,41 +10,16 @@ export class PackagesComponent implements OnInit {
 
   cardType: any = "grid";
 
-  categoryCollection: string = "categories";
-  packagesCollection: string = "packages";
   categoryData: any = [];
   packagesData: any = [];
 
   constructor(
-    private fireStore: AngularFirestore
+    private packages: PackagesService
   ) { }
 
   ngOnInit(): void {
-    this.getCategories();
-    this.getPackages();
-  }
-
-  getCategories() {
-    this.fireStore.collection(this.categoryCollection).get().subscribe((res) => {
-      res.docs.forEach((doc) => {
-        
-        let item = {
-          id: doc.id,
-          image: doc.data()['image'],
-          name: doc.data()['name'],
-        }
-
-        this.categoryData.push(item);
-      });
-    });    
-  }
-
-  getPackages() {
-    this.fireStore.collection(this.packagesCollection).get().subscribe((res) => {
-      res.docs.forEach((doc) => {
-        this.packagesData.push(doc.data());
-      });
-    });
+    this.categoryData = this.packages.getCategories();
+    this.packagesData = this.packages.getPackages();
   }
 
 }

@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label>Categories</label>
-                <select class="custom-select form-control" formControlName="category">
+                <select class="custom-select form-control" formControlName="category" (change)="onCategorySelect($event)">
                     <option>Select Category</option>
                     <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>

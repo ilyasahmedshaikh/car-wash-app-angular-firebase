@@ -11,7 +11,7 @@
     <div class="content">
         <h3 class="text-truncate" *ngIf="data.name">{{data.name}}</h3>
         <p *ngIf="data.contact">{{data.contact}}</p>
-        <p *ngIf="data.category" class="text-muted">{{data.category}}</p>
+        <p *ngIf="data.category" class="text-muted">{{data.category[0].name}}</p>
         <p *ngIf="data.location" class="text-muted">{{data.location}}</p>
         <p *ngIf="data.notificationType" class="text-muted"><small>{{data.notificationType}}</small></p>
 
@@ -40,7 +40,7 @@
                     <strong>{{data.price}}</strong>
                 </p>
                 <p *ngIf="data.contact">{{data.contact}}</p>
-                <p *ngIf="data.category" class="text-muted">{{data.category}}</p>
+                <p *ngIf="data.category" class="text-muted">{{data.category[0].name}}</p>
                 <p *ngIf="data.location" class="text-muted">{{data.location}}</p>
                 <p *ngIf="data.notificationType" class="text-muted"><small>{{data.notificationType}}</small></p>
             </div>

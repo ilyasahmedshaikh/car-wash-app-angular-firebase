@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -7,6 +7,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./all-packages.component.scss']
 })
 export class AllPackagesComponent implements OnInit {
+
+  @Input('selectedCategory') selectedCategory: any;
 
   cardType: any = "grid";
 

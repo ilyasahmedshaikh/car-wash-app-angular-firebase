@@ -11,6 +11,7 @@
         width: 90px;
         height: 90px;
         border-radius: 50%;
+        position: relative;
         img {
             &.small {
                 position: relative;
@@ -26,5 +27,20 @@
     p {
         font-size: 14px;
         padding: 5px 0 0 0;
+    }
+}
+
+.check {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 18px;
+    color: $green;
+    visibility: hidden;
+}
+
+.selected {
+    .check {
+        visibility: visible;
     }
 }

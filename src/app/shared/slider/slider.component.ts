@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -8,8 +8,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class SliderComponent implements OnInit {
 
+  @Output() selectCategory = new EventEmitter<any>();
+
   categoryCollection: string = "categories";
   categories: any = [];
+  selectedCategory: any = '';
 
   slideConfig = {
     "slidesToShow": 2, 
@@ -38,6 +41,11 @@ export class SliderComponent implements OnInit {
         this.categories.push(item);
       });
     });
+  }
+
+  categoryClicked(data) {
+    this.selectedCategory = data;
+    this.selectCategory.emit(data);
   }
 
 }

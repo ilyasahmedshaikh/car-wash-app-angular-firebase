@@ -1,0 +1,13 @@
+@import '/src/styles.scss';
+
+.heading {
+    @include typography($fontSize: 17px, $fontWeight: 500, $color: $darkDefault, $padding: 0);
+}
+
+.app-custom-card
+{
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}

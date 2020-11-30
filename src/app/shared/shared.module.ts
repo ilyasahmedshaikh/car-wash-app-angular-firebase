@@ -6,12 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderComponent } from './slider/slider.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CustomCardComponent } from './custom-card/custom-card.component';
+import { AllPackagesComponent } from './all-packages/all-packages.component';
 
 @NgModule({
   declarations: [
     SliderComponent,
     CarouselComponent,
-    CustomCardComponent
+    CustomCardComponent,
+    AllPackagesComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { CustomCardComponent } from './custom-card/custom-card.component';
     SliderComponent,
     CarouselComponent,
     CustomCardComponent,
+    AllPackagesComponent
   ]
 })
 export class SharedModule { }

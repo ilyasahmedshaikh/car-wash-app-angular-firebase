@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12">
+        <h3 class="heading pb-3">Featured Packages</h3>
+    </div>
+    <div class="col-12" *ngIf="packagesData.length > 0">
+        <div class="row">
+            <div class="col-6" *ngFor="let item of packagesData; index as i;" routerLink="/package-details">
+                <app-custom-card class="app-custom-card" [data]="item" [cardType]="cardType" routerLink="/posts/details"></app-custom-card>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="packagesData.length == 0">
+        <img class="loading" src="../../../assets/img/loading.gif" />
+    </div>
+</div>

@@ -1,8 +1,8 @@
-<section>
-    <div class="container">
+<div class="row">
+    <div class="col-12">
         <h3 class="heading">Categories</h3>
     </div>
-    <div class="scrollmenu" *ngIf="categories.length > 0">
+    <div class="col-12 scrollmenu" *ngIf="categories.length > 0">
         <div class="item" *ngFor="let item of categories">
             <div class="image-container">
                 <img class="large" src={{item.image}} alt="Category">
@@ -13,4 +13,4 @@
     <div *ngIf="categories.length == 0">
         <img class="loading" src="../../../assets/img/loading.gif" />
     </div>
-</section>
+</div>

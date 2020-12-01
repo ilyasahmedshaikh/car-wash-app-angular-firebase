@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BackNavigateService } from '../../core/services/back-navigate/back-navigate.service';
 import { PackagesService } from '../../core/services/packages/packages.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class AllPackagesComponent implements OnInit {
 
   constructor(
     private fireStore: AngularFirestore,
-    private packageService: PackagesService
+    private packageService: PackagesService,
+    private backService: BackNavigateService
   ) { }
 
   ngOnInit(): void {
@@ -47,4 +49,9 @@ export class AllPackagesComponent implements OnInit {
       this.packagesUsed = filtered;
     })
   }
+
+  backEnabled() {
+    this.backService.toggleBackState();
+  }
+
 }

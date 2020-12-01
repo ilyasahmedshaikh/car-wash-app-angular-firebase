@@ -8,6 +8,7 @@
                 *ngFor="let item of packagesUsed; index as i;" 
                 routerLink="/package-details"
                 [state]="{ data: item}"
+                (click)="backEnabled()"
             >
                 <app-custom-card class="app-custom-card" [data]="item" [cardType]="cardType"></app-custom-card>
             </div>

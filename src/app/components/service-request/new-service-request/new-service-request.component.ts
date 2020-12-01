@@ -20,6 +20,7 @@ export class NewServiceRequestComponent implements OnInit {
   packagesData: any = [];
 
   selectedCategory: any = '';
+  selectedPackage: any = '';
 
   constructor(
     private router: Router,
@@ -65,5 +66,11 @@ export class NewServiceRequestComponent implements OnInit {
     this.selectedCategory = data;
     this.packageService.setCategory(this.selectedCategory);
   }
+
+  getPackage(data) {
+    this.selectedPackage = data;
+    
+  }
+
 
 }

@@ -11,6 +11,7 @@ import { PackagesService } from '../../core/services/packages/packages.service';
 export class AllPackagesComponent implements OnInit {
 
   @Input('selectable') selectable: any = false;
+  @Output() selectAnyPackage = new EventEmitter<any>();
 
   cardType: any = "grid";
 
@@ -68,7 +69,7 @@ export class AllPackagesComponent implements OnInit {
     }
     else {
       this.selectedPackage = selected;
-      console.log(this.selectedPackage);
+      this.selectAnyPackage.emit(this.selectedPackage);
     }
   }
 

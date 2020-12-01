@@ -10,6 +10,8 @@ import { PackagesService } from '../../core/services/packages/packages.service';
 })
 export class AllPackagesComponent implements OnInit {
 
+  @Input('selectable') selectable: any = false;
+
   cardType: any = "grid";
 
   packagesCollection: string = "packages";
@@ -17,6 +19,7 @@ export class AllPackagesComponent implements OnInit {
   packagesUsed: any = [];
 
   selectedCategory: any = '';
+  selectedPackage: any = '';
 
   constructor(
     private fireStore: AngularFirestore,
@@ -32,8 +35,17 @@ export class AllPackagesComponent implements OnInit {
   getPackages() {
     this.fireStore.collection(this.packagesCollection).get().subscribe((res) => {
       res.docs.forEach((doc) => {
-        this.packagesData.push(doc.data());
-        this.packagesUsed.push(doc.data());
+
+        let item = {
+          id: doc.id,
+          image: doc.data()['image'],
+          name: doc.data()['name'],
+          price: doc.data()['price'],
+          category: doc.data()['category'],
+        }
+
+        this.packagesData.push(item);
+        this.packagesUsed.push(item);
       });
     });
   }
@@ -48,6 +60,16 @@ export class AllPackagesComponent implements OnInit {
       let filtered = this.packagesUsed.filter(item => item.category[0].id == this.selectedCategory.id);
       this.packagesUsed = filtered;
     })
+  }
+
+  selectPackage(selected) {
+    if (this.selectedPackage.id == selected.id) {
+      this.selectedPackage = '';
+    }
+    else {
+      this.selectedPackage = selected;
+      console.log(this.selectedPackage);
+    }
   }
 
   backEnabled() {

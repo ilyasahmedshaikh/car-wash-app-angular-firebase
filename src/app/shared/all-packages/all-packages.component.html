@@ -1,4 +1,5 @@
-<div class="row">
+<!-- routed packages  -->
+<div class="row" *ngIf="!selectable">
     <div class="col-12">
         <h3 class="heading pb-3">Featured Packages</h3>
     </div>
@@ -11,6 +12,29 @@
                 (click)="backEnabled()"
             >
                 <app-custom-card class="app-custom-card" [data]="item" [cardType]="cardType"></app-custom-card>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="packagesData.length == 0">
+        <img class="loading" src="../../../assets/img/loading.gif" />
+    </div>
+</div>
+
+<!-- selectable packages  -->
+<div class="row" *ngIf="selectable">
+    <div class="col-12">
+        <h3 class="heading pb-3">Select Package</h3>
+    </div>
+    <div class="col-12" *ngIf="packagesUsed.length > 0">
+        <div class="row">
+            <div class="col-6" *ngFor="let item of packagesUsed; index as i;" (click)="selectPackage(item)">
+                <div class="item" [ngClass]="{'selected': selectedPackage.id == item.id}">
+                    <span class="check">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+
+                    <app-custom-card class="app-custom-card" [data]="item" [cardType]="cardType"></app-custom-card>
+                </div>
             </div>
         </div>
     </div>

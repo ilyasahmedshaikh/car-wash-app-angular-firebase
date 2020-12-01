@@ -11,3 +11,27 @@
         border: none;
     }
 }
+
+.item {
+    position: relative;
+}
+
+.check {
+    position: absolute;
+    right: 0;
+    top: -15px;
+    font-size: 20px;
+    color: $green;
+    visibility: hidden;
+    z-index: 1;
+    i {
+        background: #ffffff;
+        border-radius: 50%;
+    }
+}
+
+.selected {
+    .check {
+        visibility: visible;
+    }
+}

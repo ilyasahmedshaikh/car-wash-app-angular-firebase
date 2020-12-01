@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+import { PackagesService } from '../../../core/services/packages/packages.service';
+
 @Component({
   selector: 'app-new-service-request',
   templateUrl: './new-service-request.component.html',
@@ -17,11 +19,14 @@ export class NewServiceRequestComponent implements OnInit {
   categoryData: any = [];
   packagesData: any = [];
 
+  selectedCategory: any = '';
+
   constructor(
     private router: Router,
     private fireStore: AngularFirestore,
     private storage: AngularFireStorage,
     private fb: FormBuilder,
+    private packageService: PackagesService
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +59,11 @@ export class NewServiceRequestComponent implements OnInit {
 
   serviceRequest() {
     console.log(this.programForm.value);
+  }
+
+  getCategory(data) {
+    this.selectedCategory = data;
+    this.packageService.setCategory(this.selectedCategory);
   }
 
 }

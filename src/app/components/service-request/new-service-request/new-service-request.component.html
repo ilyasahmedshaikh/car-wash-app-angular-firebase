@@ -26,7 +26,7 @@
               
             <div *ngIf="step == 2">
                 <div class="form-group pt-1">
-                    <app-slider></app-slider>
+                    <app-slider (selectCategory)="getCategory($event)"></app-slider>
                 </div>
     
                 <div class="form-group pt-1">

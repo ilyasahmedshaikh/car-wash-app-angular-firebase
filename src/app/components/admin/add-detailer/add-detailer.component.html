@@ -1,0 +1,32 @@
+<div class="add-detailer-screen">
+    <div class="container">
+        <div class="heading pt-4">
+            <h1>Add Detailer</h1>
+        </div>
+    
+        <form class="pt-4" [formGroup]="programForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" placeholder="Email" formControlName="email">
+            </div>
+
+            <div class="form-group">
+                <label>Contact</label>
+                <input type="number" class="form-control" placeholder="Contact" formControlName="contact">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" class="form-control" placeholder="Password" formControlName="password">
+            </div>
+
+            <a class="rounded-btn w-100 mt-4">Add Detailer</a>
+
+        </form>
+    </div>
+</div>

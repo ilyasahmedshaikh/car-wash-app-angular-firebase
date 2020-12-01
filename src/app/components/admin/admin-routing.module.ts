@@ -5,6 +5,8 @@ import { AllPackagesComponent } from './all-packages/all-packages.component';
 import { AddPackageComponent } from './add-package/add-package.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { AddDetailerComponent } from './add-detailer/add-detailer.component';
+import { AllDetailersComponent } from './all-detailers/all-detailers.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'add-category',
     component: AddCategoryComponent
+  },
+  {
+    path: 'all-detailers',
+    component: AllDetailersComponent
+  },
+  {
+    path: 'add-detailer',
+    component: AddDetailerComponent
   },
 ];
 

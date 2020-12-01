@@ -9,9 +9,10 @@ import { NewServiceRequestComponent } from './new-service-request/new-service-re
 import { ServiceRequestsComponent } from './service-requests/service-requests.component';
 
 import { SharedModule } from '../../shared/shared.module';
+import { ServiceRequestDetailsComponent } from './service-request-details/service-request-details.component';
 
 @NgModule({
-  declarations: [ServiceRequestComponent, NewServiceRequestComponent, ServiceRequestsComponent],
+  declarations: [ServiceRequestComponent, NewServiceRequestComponent, ServiceRequestsComponent, ServiceRequestDetailsComponent],
   imports: [
     CommonModule,
     ServiceRequestRoutingModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NewServiceRequestComponent } from './new-service-request/new-service-request.component';
 import { ServiceRequestsComponent } from './service-requests/service-requests.component';
+import { ServiceRequestDetailsComponent } from './service-request-details/service-request-details.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'service-requests',
     component: ServiceRequestsComponent
+  },
+  {
+    path: 'service-request-details',
+    component: ServiceRequestDetailsComponent
   },
 ];
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class PackagesService {
   categoryData: any = [];
   packagesData: any = [];
 
-  packages: any = [];
+  public selectedCategory = new Subject<any>();
 
   constructor(
     private fireStore: AngularFirestore
@@ -39,6 +40,10 @@ export class PackagesService {
       });
     });
     return this.packagesData;
+  }
+
+  setCategory(value) {
+    this.selectedCategory.next(value);
   }
 
 }

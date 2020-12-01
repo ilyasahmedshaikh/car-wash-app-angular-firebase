@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PackagesService } from '../../core/services/packages/packages.service';
 
 @Component({
   selector: 'app-homepage',
@@ -11,14 +12,15 @@ export class HomepageComponent implements OnInit {
   selectedCategory: any = '';
 
   constructor(
+    private packageService: PackagesService
   ) { }
 
   ngOnInit(): void {
   }
 
   getCategory(data) {
-    console.log(data);
     this.selectedCategory = data;
+    this.packageService.setCategory(this.selectedCategory);
   }
 
 }

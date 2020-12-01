@@ -1,7 +1,7 @@
 <div class="package-details-screen">
     <div class="container">
         <div class="row">
-            <div class="car-area" style="background: url(https://i.ibb.co/rxBLqTQ/screen-12.jpg);"></div>
+            <div class="car-area" style="background: url({{data.image}})"></div>
         </div>
     </div>
 
@@ -11,13 +11,13 @@
                     <div class="col-12 pt-4">
                         <div class="row">
                             <div class="col-8">
-                                <h1 class="heading">Bronze Package</h1>
+                                <h1 class="heading">{{data.name}}</h1>
                             </div>
                             <div class="col-4">
-                                <p class="category pt-2 text-right font-italic text-black-50">Mini Car</p>
+                                <p class="category pt-2 text-right font-italic text-black-50">{{data.category[0].name}}</p>
                             </div>
                         </div>
-                        <p class="price text-black-50 pt-2">Rs.1000</p>
+                        <p class="price text-black-50 pt-2">Rs.{{data.price}}</p>
 
                         <div class="items pt-3">
                             <span class="badge badge-pill bg-light">Interior Vaccum</span>

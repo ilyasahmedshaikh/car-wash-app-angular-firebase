@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { PackagesService } from '../../core/services/packages/packages.service';
 
@@ -19,7 +18,6 @@ export class AllPackagesComponent implements OnInit {
   selectedCategory: any = '';
 
   constructor(
-    private router: Router,
     private fireStore: AngularFirestore,
     private packageService: PackagesService
   ) { }
@@ -49,9 +47,4 @@ export class AllPackagesComponent implements OnInit {
       this.packagesUsed = filtered;
     })
   }
-
-  routeTo(route) {
-    this.router.navigateByUrl(route);
-  }
-
 }

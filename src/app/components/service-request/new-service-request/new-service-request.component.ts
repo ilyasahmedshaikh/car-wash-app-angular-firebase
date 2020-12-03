@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 import { PackagesService } from '../../../core/services/packages/packages.service';
@@ -15,6 +14,7 @@ export class NewServiceRequestComponent implements OnInit {
 
   programForm: FormGroup;
   step: number = 1;
+  serviceRequestCollection: string = "service-requests";
 
   categoryData: any = [];
   packagesData: any = [];
@@ -25,7 +25,6 @@ export class NewServiceRequestComponent implements OnInit {
   constructor(
     private router: Router,
     private fireStore: AngularFirestore,
-    private storage: AngularFireStorage,
     private fb: FormBuilder,
     private packageService: PackagesService
   ) { }
@@ -59,7 +58,23 @@ export class NewServiceRequestComponent implements OnInit {
   }
 
   serviceRequest() {
-    console.log(this.programForm.value);
+    this.fireStore.collection(this.serviceRequestCollection).add({
+      fullName: this.programForm.value.fullName,
+      mobile: this.programForm.value.mobile,
+      location: this.programForm.value.location,
+      category: this.selectedCategory,
+      package: this.selectedPackage,
+      datetime: this.programForm.value.datetime,
+      payment: this.programForm.value.payment,
+    })
+    .then(res => {
+      // console.log(res);
+      this.router.navigateByUrl("/service-request");
+      this.programForm.reset();
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 
   getCategory(data) {
@@ -69,7 +84,6 @@ export class NewServiceRequestComponent implements OnInit {
 
   getPackage(data) {
     this.selectedPackage = data;
-    
   }
 
 

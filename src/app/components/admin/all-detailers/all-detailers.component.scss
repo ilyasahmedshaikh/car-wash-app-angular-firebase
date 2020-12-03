@@ -1,0 +1,27 @@
+@import '/src/styles.scss';
+
+.all-detailers-screen .heading h1{
+    font-size: 18px;
+    color: $lightDefault;
+    margin-bottom: 0px;
+}
+
+.detailers-list .detailer-img img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid $white;
+    border-radius: 50%;
+}
+
+.detailers-list .detailer-contact p {
+    font-size: 16px;
+    color: $lightDefault;
+}
+
+.detailers-list .arrow-icon i {
+    font-size: 20px;
+    padding-top: 15px;
+    color: $lightDefault;
+}

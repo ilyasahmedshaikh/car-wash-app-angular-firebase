@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-service-request-details',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceRequestDetailsComponent implements OnInit {
 
-  constructor() { }
+  programForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+    this.formInit();
+  }
+
+  formInit() {
+    this.programForm = this.fb.group({
+      name: ['', Validators.required],
+      contact: ['', Validators.required],
+      location: ['', Validators.required],
+      category: ['', Validators.required],
+      package: ['', Validators.required],
+      datetime: ['', Validators.required],
+      payment: ['', Validators.required],
+      detailer: ['', Validators.required],
+    });
   }
 
 }

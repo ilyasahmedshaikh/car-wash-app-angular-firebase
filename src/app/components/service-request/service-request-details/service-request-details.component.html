@@ -4,45 +4,46 @@
             <h1>Service Request Details</h1>
         </div>
     
-        <form class="pt-4" [formGroup]="programForm">
+        <form class="pt-4">
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Name</label></small>
-                <p>Ilyas Ahmed</p>
+                <p>{{data.data.name}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Contact</label></small>
-                <p>+92 333 7148980</p>
+                <p>{{data.data.mobile}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Car Location</label></small>
-                <p>Gulistan e Jauhar Block 17, Karachi</p>
+                <p>{{data.data.location}}</p>
             </div>
               
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Select Category</label></small>
-                <p>Compact Suv</p>
+                <p>{{data.data.category.name}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Select Package</label></small>
-                <p>Gold Package</p>
+                <p>{{data.data.package.name}}</p>
             </div>
     
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Date & Time</label></small>
-                <p>Dec 2, 2020 at 3:02 PM</p>
+                <p>{{data.data.datetime}}</p>
             </div>
             
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Payment</label></small>
-                <p>Cash Payment</p>
+                <p>{{data.data.payment}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
-                <small><label class="text-muted mb-0">Select Detailer</label></small>
-                <p>Detailer 2</p>
+                <small><label class="text-muted mb-0">Assigned Detailer</label></small>
+                <p *ngIf="data.data.detailer == 'not-assigned'">Not Assigned Yet</p>
+                <p *ngIf="data.data.detailer != 'not-assigned'">{{data.data.detailer}}</p>
             </div>
 
             <div class="btns pt-3">

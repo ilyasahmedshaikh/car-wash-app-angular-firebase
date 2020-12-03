@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-service-request-details',
@@ -8,27 +8,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ServiceRequestDetailsComponent implements OnInit {
 
-  programForm: FormGroup;
+  data: any = {};
 
   constructor(
-    private fb: FormBuilder,
-  ) { }
-
-  ngOnInit(): void {
-    this.formInit();
+    private router: Router
+  ) {
+    this.data = this.router.getCurrentNavigation().extras.state;
   }
 
-  formInit() {
-    this.programForm = this.fb.group({
-      name: ['', Validators.required],
-      contact: ['', Validators.required],
-      location: ['', Validators.required],
-      category: ['', Validators.required],
-      package: ['', Validators.required],
-      datetime: ['', Validators.required],
-      payment: ['', Validators.required],
-      detailer: ['', Validators.required],
-    });
+  ngOnInit(): void {
   }
 
 }

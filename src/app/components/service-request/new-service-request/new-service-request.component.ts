@@ -66,6 +66,7 @@ export class NewServiceRequestComponent implements OnInit {
       package: this.selectedPackage,
       datetime: this.programForm.value.datetime,
       payment: this.programForm.value.payment,
+      detailer: 'not-assigned',
     })
     .then(res => {
       // console.log(res);

@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="sidebar side" [ngClass]="{'show': sidebar}">
+<div class="sidebar side" [ngClass]="{'show': sidebar}" *ngIf="loginStatus">
     <ul>
         <li>
             <a (click)="routeTo('/admin')">

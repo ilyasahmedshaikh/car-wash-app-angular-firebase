@@ -23,5 +23,7 @@ https://github.com/angular/angularfire/blob/master/docs/firestore/querying-colle
 # Angular Fire Storage - Image Upload
 https://github.com/angular/angularfire/blob/master/docs/storage/storage.md
 
+# Angular Firestore Auth
+
 # github pages - live deploy
 https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4

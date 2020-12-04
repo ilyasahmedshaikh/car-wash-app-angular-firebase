@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
 import { Router } from '@angular/router';
 import{ BackNavigateService } from '../../core/services/back-navigate/back-navigate.service';
+import { CheckLoginService } from '../../core/services/check-login/check-login.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +15,13 @@ export class HeaderComponent implements OnInit {
   sidebar: boolean = false;
   fadeSection: boolean = false;
   backBtnState: boolean = false;
+  loginStatus: boolean = false;
 
   constructor(
     private router: Router,
     private backNavigateService: BackNavigateService,
-    private location: Location
+    private location: Location,
+    private checkLogin: CheckLoginService
   ) { }
 
   ngOnInit() {
@@ -26,6 +29,8 @@ export class HeaderComponent implements OnInit {
       this.backBtnState = res;
       console.log(res);
     });
+
+    this.ifLogin();
   }
 
   toggleMenu() {
@@ -52,6 +57,13 @@ export class HeaderComponent implements OnInit {
   back() {
     this.location.back();
     this.toggleBack();
+  }
+
+  ifLogin() {
+    this.checkLogin.status.subscribe(res => {
+      this.loginStatus = res;
+      console.log("header-login", this.loginStatus);
+    })
   }
 
 }

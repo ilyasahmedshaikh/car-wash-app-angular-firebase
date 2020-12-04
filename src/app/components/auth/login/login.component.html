@@ -4,23 +4,23 @@
             <h1>LOG IN</h1>
         </div>
     
-        <form class="pt-4">
+        <form class="pt-4" [formGroup]="programForm">
             <div class="form-group">
               <label>Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="email" class="form-control" formControlName="email">
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
     
             <div class="form-group">
               <label>Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" formControlName="password">
             </div>
     
             <div class="row">
                 <div class="col-6">
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Remember Me</label>
                     </div>
                 </div>
     
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="rounded-btn w-100 mt-3">Log In</a>
+            <a (click)="login()" class="rounded-btn w-100 mt-3">Log In</a>
 
             <div class="account-text pt-3 text-center">
                 <span>Don't hane an Account?</span>

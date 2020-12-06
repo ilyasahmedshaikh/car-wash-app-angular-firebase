@@ -13,7 +13,7 @@
     </div>
 </div>
 <!-- *ngIf="loginStatus" -->
-<div class="sidebar side" [ngClass]="{'show': sidebar}">
+<div class="sidebar side" [ngClass]="{'show': sidebar}" *ngIf="loginStatus">
     <ul>
         <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin')">
@@ -55,7 +55,7 @@
                 Home
             </a>
         </li>
-        <li *ngIf="loginStatus">
+        <li *ngIf="userType == 'user' || userType == 'detailer'">
             <a (click)="routeTo('/service-request')">
                 Service Requests
             </a>
@@ -65,12 +65,12 @@
                 Packages
             </a>
         </li>
-        <li *ngIf="loginStatus">
+        <li *ngIf="userType == 'user' || userType == 'detailer'">
             <a (click)="routeTo('/profile')">
                 Profile
             </a>
         </li>
-        <li *ngIf="loginStatus">
+        <li>
             <a (click)="logout()">
                 Logout
             </a>

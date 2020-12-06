@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
     });
 
     this.ifLogin();
+    this.getUserType();
   }
 
   toggleMenu() {

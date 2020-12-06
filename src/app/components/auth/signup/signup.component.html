@@ -4,32 +4,34 @@
 			<h1>SIGN UP</h1>
 		</div>
 	
-		<form class="pt-4">
-			<div class="form-row">
+		<form class="pt-4" [formGroup]="programForm">
+			<div class="row">
 				<div class="form-group col-md-6">
-				  <label>User Name</label>
-				  <input type="text" class="form-control" id="inputUserName">
+					<label>User Name</label>
+					<input type="text" class="form-control" formControlName="name">
 				</div>
-				
+				  
 				<div class="form-group col-md-6">
-					<label>Email</label>
-					<input type="email" class="form-control" id="inputEmail4">
+					  <label>Email</label>
+					  <input type="email" class="form-control" formControlName="email">
 				</div>
-			  </div>
-	
-			<div class="form-row">
+
+				<div class="form-group col-md-6">
+					<label>Contact</label>
+					<input type="number" class="form-control" formControlName="contact">
+				</div>
+
 				<div class="form-group col-md-6">
 					<label>Password</label>
-					<input type="password" class="form-control" id="inputPassword4">
-				</div>
-	
-				<div class="form-group col-md-6">
-					<label>Confirm Password</label>
-					<input type="cpassword" class="form-control" id="inputCPassword4">
+					<input type="password" class="form-control" formControlName="password">
 				</div>
 			</div>
 	
-			<a href="#" class="rounded-btn w-100 mt-2">Sign Up</a>
+			<a *ngIf="!loader" (click)="signup()" class="rounded-btn w-100 mt-2">Sign Up</a>
+
+			<div *ngIf="loader" class="loader">
+				<img class="loading" src={{loadingImg}} />
+			</div>
 		</form>
 		  
 		<div class="social-bar pt-3">
@@ -42,8 +44,6 @@
 					<ul>
 						<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
 						<li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
-						<li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 			</div>

@@ -24,6 +24,8 @@ https://github.com/angular/angularfire/blob/master/docs/firestore/querying-colle
 https://github.com/angular/angularfire/blob/master/docs/storage/storage.md
 
 # Angular Firestore Auth
+https://github.com/angular/angularfire/blob/master/docs/auth/getting-started.md
+https://medium.com/javascript-in-plain-english/how-to-add-firebase-authentication-to-pwa-or-angular-project-using-angularfire-83a8f61d367c
 
 # github pages - live deploy
 https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4

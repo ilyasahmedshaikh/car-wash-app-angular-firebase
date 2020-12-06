@@ -30,13 +30,17 @@
                     </div>
                 </div>
             </div>
-            <a (click)="login()" class="rounded-btn w-100 mt-3">Log In</a>
+
+            <a *ngIf="!loader" (click)="login()" class="rounded-btn w-100 mt-3">Log In</a>
+
+            <div *ngIf="loader" class="loader">
+				<img class="loading" src={{loadingImg}} />
+			</div>
 
             <div class="account-text pt-3 text-center">
                 <span>Don't hane an Account?</span>
                 <a routerLink="/auth/signup">Sign Up</a> 
             </div>
-            
         </form>
     </div>
 </div>

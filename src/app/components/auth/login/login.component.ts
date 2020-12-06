@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   
   programForm: FormGroup;
   loginStatus: boolean = false;
-  loading: any = "../../../../assets/img/loading.gif";
+  loadingImg: any = "../../../../assets/img/loading.gif";
+  loader: boolean = false;
 
   constructor(
     private router: Router,
@@ -37,12 +38,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.loader = true;
+
     const email = this.programForm.value.email;
     const password = this.programForm.value.password;
 
     this.auth.signInWithEmailAndPassword(email, password)
     .then(value => {
       console.log('Login Success');
+      this.loader = true;
       this.checkLogin.setLoginStatus(true);
       this.router.navigateByUrl('/profile');
     })

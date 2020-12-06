@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
       });
 
       this.checkLogin.setLoginStatus(true);
-      this.router.navigateByUrl('/profile');
+      this.router.navigateByUrl('/homepage');
     })
     .catch(err => {
       console.log('Something went wrong: ', err.message);
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
       this.loginStatus = res;
       
       if (this.loginStatus) {
-        this.router.navigateByUrl('/profile');
+        this.router.navigateByUrl('/homepage');
       }
     })
   }

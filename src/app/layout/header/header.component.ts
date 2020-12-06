@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   fadeSection: boolean = false;
   backBtnState: boolean = false;
   loginStatus: boolean = false;
+  userType: string = 'user';
 
   constructor(
     private router: Router,
@@ -64,6 +65,17 @@ export class HeaderComponent implements OnInit {
       this.loginStatus = res;
       console.log("header-login", this.loginStatus);
     })
+  }
+
+  getUserType() {
+    let data = this.checkLogin.getUserData();
+    this.userType = data.user_type;
+  }
+
+  logout() {
+    this.toggleMenu();
+    this.checkLogin.setLoginStatus(false);
+    this.checkLogin.logout();
   }
 
 }

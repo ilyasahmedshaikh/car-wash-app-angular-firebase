@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
-
+import { CheckLoginService } from '../../../core/services/check-login/check-login.service';
 import { PackagesService } from '../../../core/services/packages/packages.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class NewServiceRequestComponent implements OnInit {
   programForm: FormGroup;
   step: number = 1;
   serviceRequestCollection: string = "service-requests";
+  loginStatus: boolean = false;
 
   categoryData: any = [];
   packagesData: any = [];
@@ -26,11 +27,13 @@ export class NewServiceRequestComponent implements OnInit {
     private router: Router,
     private fireStore: AngularFirestore,
     private fb: FormBuilder,
-    private packageService: PackagesService
+    private packageService: PackagesService,
+    private checkLogin: CheckLoginService
   ) { }
 
   ngOnInit(): void {
     this.formInit();
+    this.ifLogin();
   }
 
   formInit() {
@@ -87,5 +90,14 @@ export class NewServiceRequestComponent implements OnInit {
     this.selectedPackage = data;
   }
 
+  ifLogin() {
+    this.checkLogin.status.subscribe(res => {
+      this.loginStatus = res;
+      
+      if (!this.loginStatus) {
+        this.router.navigateByUrl('/auth/login');
+      }
+    })
+  }
 
 }

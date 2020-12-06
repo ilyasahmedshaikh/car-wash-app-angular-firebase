@@ -8,10 +8,21 @@ export class CheckLoginService {
 
   public status = new BehaviorSubject(false);
 
-  constructor() { }
+  constructor() {
+    let data = localStorage.getItem('user');
+    if (data) {
+      this.status.next(true);
+    } else {
+      this.status.next(false);
+    }
+  }
 
   setLoginStatus(status) {
     this.status.next(status);
+  }
+
+  logout() {
+    localStorage.clear();
   }
 
   setLoginData(data) {

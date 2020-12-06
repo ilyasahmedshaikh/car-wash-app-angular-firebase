@@ -12,40 +12,40 @@
         </div>
     </div>
 </div>
-
-<div class="sidebar side" [ngClass]="{'show': sidebar}" *ngIf="loginStatus">
+<!-- *ngIf="loginStatus" -->
+<div class="sidebar side" [ngClass]="{'show': sidebar}">
     <ul>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin')">
                 Admin
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/all-detailers')">
                 All Detailers
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/add-detailer')">
                 Add Detailer
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/all-categories')">
                 All Categories
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/add-category')">
                 Add Category
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/all-packages')">
                 All Packages
             </a>
         </li>
-        <li>
+        <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/add-package')">
                 Add Package
             </a>
@@ -55,7 +55,7 @@
                 Home
             </a>
         </li>
-        <li>
+        <li *ngIf="loginStatus">
             <a (click)="routeTo('/service-request')">
                 Service Requests
             </a>
@@ -65,14 +65,14 @@
                 Packages
             </a>
         </li>
-        <li>
+        <li *ngIf="loginStatus">
             <a (click)="routeTo('/profile')">
                 Profile
             </a>
         </li>
-        <li>
-            <a (click)="routeTo('/auth')">
-                Login
+        <li *ngIf="loginStatus">
+            <a (click)="logout()">
+                Logout
             </a>
         </li>
         

@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
           name: this.programForm.value.name,
           email: this.programForm.value.email,
           contact: this.programForm.value.contact,
-          user_type: 'detailer',
+          user_type: 'user',
         })
         .then(res => {
           console.log(res);

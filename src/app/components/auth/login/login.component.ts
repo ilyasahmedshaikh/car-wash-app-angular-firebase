@@ -45,8 +45,26 @@ export class LoginComponent implements OnInit {
 
     this.auth.signInWithEmailAndPassword(email, password)
     .then(value => {
-      console.log('Login Success');
       this.loader = true;
+
+      // get profile/bio of current Login User
+      this.fireStore.collection('users').get().subscribe((res) => {
+        res.docs.forEach((doc) => {
+          let item = {
+            id: doc.id,
+            name: doc.data()['name'],
+            contact: doc.data()['contact'],
+            email: doc.data()['email'],
+            user_type: doc.data()['user_type'],
+          }
+
+          if (item.email == email) {
+            console.log(item);
+            this.checkLogin.setLoginData(item);
+          }
+        });
+      });
+
       this.checkLogin.setLoginStatus(true);
       this.router.navigateByUrl('/profile');
     })

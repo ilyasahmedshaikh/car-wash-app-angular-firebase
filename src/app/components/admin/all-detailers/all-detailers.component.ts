@@ -24,8 +24,15 @@ export class AllDetailersComponent implements OnInit {
   async getUsers() {
     await this.fireStore.collection(this.usersCollection, ref => ref.where('user_type', '==', 'detailer')).get().subscribe((res) => {
       res.docs.forEach((doc) => {
-        console.log(doc.data());
-        this.data.push(doc.data());
+        let item = {
+          id: doc.id,
+          name: doc.data()['name'],
+          image: doc.data()['image'],
+          contact: doc.data()['contact'],
+          email: doc.data()['email'],
+          user_type: doc.data()['user_type'],
+        }
+        this.data.push(item);
       });
     });
   }

@@ -29,6 +29,7 @@ export class AddDetailerComponent implements OnInit {
 
   ngOnInit(): void {
     this.formInit();
+    console.log(this.data);
     
     if (this.data) {
       this.programForm.patchValue({
@@ -45,7 +46,7 @@ export class AddDetailerComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       contact: ['', Validators.required],
-      password: ['', Validators.required],
+      // password: ['', Validators.required],
     });
   }
 
@@ -75,6 +76,22 @@ export class AddDetailerComponent implements OnInit {
       .catch(err => {
         console.log('Something went wrong: ',err.message);
       });
+  }
+
+  updateDetailer() {
+    this.fireStore.collection(this.usersCollection).doc(this.data.id).update({
+      name: this.programForm.value.name,
+      email: this.programForm.value.email,
+      contact: this.programForm.value.contact,
+      // password: this.programForm.value.password,
+    })
+    .then(res => {
+      alert('Detailer Updated');
+      this.router.navigateByUrl("/admin/all-detailers");
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 
 }

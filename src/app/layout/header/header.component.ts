@@ -17,14 +17,16 @@ export class HeaderComponent implements OnInit {
   backBtnState: boolean = false;
   loginStatus: boolean = false;
   userType: string = 'user';
-  userData: any = this.checkLogin.getUserData();
+  userData: any = 'https://i.ibb.co/2MH630J/user.png';
 
   constructor(
     private router: Router,
     private backNavigateService: BackNavigateService,
     private location: Location,
     private checkLogin: CheckLoginService
-  ) { }
+  ) {
+    if(this.checkLogin.getUserData()) { this.userData = this.checkLogin.getUserData(); }
+  }
 
   ngOnInit() {
     this.backNavigateService.back.subscribe(res => {

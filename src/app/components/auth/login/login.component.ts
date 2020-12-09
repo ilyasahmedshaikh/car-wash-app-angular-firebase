@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit {
           }
 
           if (item.email == email) {
-            console.log(item);
             this.checkLogin.setLoginData(item);
           }
         });

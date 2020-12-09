@@ -10,16 +10,14 @@
                 <i class="fas fa-chevron-left"></i>
             </a>
         </div>
+        <div class="profile" *ngIf="loginStatus">
+            <img src={{userData.image}} alt="user" />
+        </div>
     </div>
 </div>
 <!-- *ngIf="loginStatus" -->
 <div class="sidebar side" [ngClass]="{'show': sidebar}" *ngIf="loginStatus">
     <ul>
-        <li *ngIf="userType == 'admin'">
-            <a (click)="routeTo('/admin')">
-                Admin
-            </a>
-        </li>
         <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/all-detailers')">
                 All Detailers
@@ -55,7 +53,7 @@
                 Home
             </a>
         </li>
-        <li *ngIf="userType == 'user' || userType == 'detailer'">
+        <li>
             <a (click)="routeTo('/service-request')">
                 Service Requests
             </a>

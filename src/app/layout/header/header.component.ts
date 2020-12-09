@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   backBtnState: boolean = false;
   loginStatus: boolean = false;
   userType: string = 'user';
+  userData: any = this.checkLogin.getUserData();
 
   constructor(
     private router: Router,

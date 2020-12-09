@@ -43,6 +43,7 @@ export class AddDetailerComponent implements OnInit {
 
         // adding detailer to firestore for user_type and other profile biodata
         this.fireStore.collection(this.usersCollection).add({
+          image: 'https://i.ibb.co/2MH630J/user.png',
           name: this.programForm.value.name,
           email: this.programForm.value.email,
           contact: this.programForm.value.contact,

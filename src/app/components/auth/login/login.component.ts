@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
           let item = {
             id: doc.id,
             name: doc.data()['name'],
+            image: doc.data()['image'],
             contact: doc.data()['contact'],
             email: doc.data()['email'],
             user_type: doc.data()['user_type'],

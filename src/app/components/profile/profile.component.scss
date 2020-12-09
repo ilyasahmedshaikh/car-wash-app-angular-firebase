@@ -1,0 +1,41 @@
+@import '../../../styles.scss';
+
+.image {
+    img {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+    }
+}
+
+label {
+    margin-bottom: 3px;
+    font-size: 13px;
+    color: #9E9E9E;
+}
+
+.content {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.add-img {
+    img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: 0 0 10px #e7e7e7;
+        border-radius: 25px;
+    }
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: $white;
+}

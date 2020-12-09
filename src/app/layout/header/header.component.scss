@@ -49,7 +49,10 @@
         list-style: none;
         margin-bottom: 0;
         padding-left: 0;
-        padding: 30% 0 0 5%;
+        padding: 20% 0 0 5%;
+        height: 85vh;
+        max-height: 85vh;
+        overflow-y: auto;
         li {
             padding: 10px 0 10px 0;
             a {

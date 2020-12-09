@@ -1,1 +1,44 @@
-<p>profile works!</p>
+<form  [formGroup]="programForm">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-7">
+                        <div class="add-img">
+                            <form>
+                                <input class="d-none" type="file" accept="image/*" #file (change)="uploadFile($event)">
+                                <a (click)="file.click()">
+                                    <img *ngIf="!imageUploaded" src={{preview}}>
+                                    <img *ngIf="imageUploaded" src={{loading}}>
+                                </a>
+                            </form>
+                        </div>
+                        <div class="content">
+                            <h4 class="text-capitalize">{{data.name}}</h4>
+                            <p class="text-muted text-capitalize">{{data.user_type}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+
+            <div class="col-12 form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="sample@email.com" formControlName="email">
+            </div>
+
+            <div class="col-12 form-group">
+                <label>Contact</label>
+                <input type="number" class="form-control" placeholder="Contact#" formControlName="contact">
+            </div>
+
+            <div class="col-12">
+                <a class="rounded-btn w-100 mt-4" (click)="updateProfile()">Update Profile</a>
+            </div>
+        </div>
+    </div>
+</form>

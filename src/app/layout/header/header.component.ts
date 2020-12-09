@@ -77,6 +77,7 @@ export class HeaderComponent implements OnInit {
     this.toggleMenu();
     this.checkLogin.setLoginStatus(false);
     this.checkLogin.logout();
+    this.router.navigateByUrl("/auth/login");
   }
 
 }

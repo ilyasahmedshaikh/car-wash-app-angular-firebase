@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-all-detailers',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllDetailersComponent implements OnInit {
 
-  constructor() { }
+  data: any = [];
+  usersCollection: string = "users";
+
+  constructor(
+    private fireStore: AngularFirestore
+  ) {}
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  async getUsers() {
+    await this.fireStore.collection(this.usersCollection, ref => ref.where('user_type', '==', 'detailer')).get().subscribe((res) => {
+      res.docs.forEach((doc) => {
+        console.log(doc.data());
+        this.data.push(doc.data());
+      });
+    });
   }
 
 }

@@ -5,7 +5,7 @@
         </div>
         
         <div class="detailers-list">
-            <div class="card p-3 mt-3" *ngFor="let item of data">
+            <div class="card p-3 mt-3" *ngFor="let item of data" routerLink="/admin/add-detailer" [state]="{ data: item}" (click)="backEnabled()">
                 <div class="row">
                     <div class="col-3 pr-0">
                         <div class="detailer-img">

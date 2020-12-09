@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AddDetailerComponent implements OnInit {
 
+  data: any;
   programForm: FormGroup;
   usersCollection: string = "users";
   loading: any = "../../../../assets/img/loading.gif";
@@ -20,10 +21,23 @@ export class AddDetailerComponent implements OnInit {
     private router: Router,
     private fireStore: AngularFirestore,
     private auth: AngularFireAuth,
-  ) { }
+  ) {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.data = this.router.getCurrentNavigation().extras.state.data;
+    }
+  }
 
   ngOnInit(): void {
     this.formInit();
+    
+    if (this.data) {
+      this.programForm.patchValue({
+        name: this.data.name,
+        email: this.data.email,
+        contact: this.data.contact,
+        password: this.data.password,
+      })
+    }
   }
 
   formInit() {

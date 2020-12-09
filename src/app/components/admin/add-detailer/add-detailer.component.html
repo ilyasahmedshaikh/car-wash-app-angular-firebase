@@ -1,7 +1,8 @@
 <div class="add-detailer-screen">
     <div class="container">
         <div class="heading pt-4">
-            <h1>Add Detailer</h1>
+            <h1 *ngIf="!data">Add Detailer</h1>
+            <h1 *ngIf="data">Update Detailer</h1>
         </div>
     
         <form class="pt-4" [formGroup]="programForm">
@@ -25,7 +26,8 @@
                 <input type="text" class="form-control" placeholder="Password" formControlName="password">
             </div>
 
-            <a class="rounded-btn w-100 mt-4" (click)="addDetailer()">Add Detailer</a>
+            <a *ngIf="!data" class="rounded-btn w-100 mt-4" (click)="addDetailer()">Add Detailer</a>
+            <a *ngIf="data" class="rounded-btn w-100 mt-4" (click)="updateDetailer()">Update Detailer</a>
 
         </form>
     </div>

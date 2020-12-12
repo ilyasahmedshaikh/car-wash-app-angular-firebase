@@ -133,7 +133,7 @@ export class AddPackageComponent implements OnInit {
     })
     .then(res => {
       alert('Category Updated');
-      this.router.navigateByUrl("/admin/all-categories");
+      this.router.navigateByUrl("/admin/all-packages");
     })
     .catch(e => {
       console.log(e);

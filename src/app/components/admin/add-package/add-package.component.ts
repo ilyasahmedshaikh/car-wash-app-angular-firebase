@@ -47,7 +47,7 @@ export class AddPackageComponent implements OnInit {
       this.programForm.patchValue({
         name: this.data.name,
         price: this.data.price,
-        category: this.data.category
+        category: this.data.category[0].id
       })
     }
   }

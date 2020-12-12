@@ -39,9 +39,12 @@
                             <div class="content py-2">
                                 <h5 class="package">{{item.name}}</h5>
                                 <p class="price text-muted">Rs. {{item.price}}</p>
-
+                                
                                 <div class="row">
-                                    <div class="col-12 icons">
+                                    <div class="col-6">
+                                        <small class="text-muted">{{item.category[0].name}}</small>
+                                    </div>
+                                    <div class="col-6 icons">
                                         <a routerLink="/admin/add-package" [state]="{ data: item}" (click)="backEnabled()"><i class="px-4 fas fa-pencil-alt"></i></a>
                                         <a (click)="deletePackage(item.id)"><i class="fas fa-trash-alt"></i></a>
                                     </div>

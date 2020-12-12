@@ -1,7 +1,8 @@
 <div class="add-category-screen">
 	<div class="container">
 		<div class="heading pt-4">
-			<h1>Add Category</h1>
+            <h1 *ngIf="!data">Add Category</h1>
+            <h1 *ngIf="data">Update Category</h1>
         </div>
 
         <div class="row justify-content-center my-4">
@@ -25,7 +26,8 @@
         </form>
 
         <div class="add-category-btn mt-4">
-            <a (click)="addCategory()" class="rounded-btn w-100 mt-2">Add Category</a>
+            <a *ngIf="!data" (click)="addCategory()" class="rounded-btn w-100 mt-2">Add Category</a>
+            <a *ngIf="data" (click)="updateCategory()" class="rounded-btn w-100 mt-2">Update Category</a>
         </div>
 	</div>
 </div>

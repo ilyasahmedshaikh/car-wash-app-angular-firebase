@@ -38,9 +38,8 @@
     
                                     <div class="row">
                                         <div class="col-12 icons">
-                                            <a routerLink="/admin/add-package"><i class="fas fa-eye"></i></a>
-                                            <a routerLink="/admin/add-package"><i class="px-4 fas fa-pencil-alt"></i></a>
-                                            <a><i class="fas fa-trash-alt"></i></a>
+                                            <a routerLink="/admin/add-category" [state]="{ data: item}" (click)="backEnabled()"><i class="px-4 fas fa-pencil-alt"></i></a>
+                                            <a (click)="deleteCategory(item.id)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>

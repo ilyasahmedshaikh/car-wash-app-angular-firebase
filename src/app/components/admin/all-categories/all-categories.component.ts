@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BackNavigateService } from '../../../core/services/back-navigate/back-navigate.service';
 
 @Component({
   selector: 'app-all-categories',
@@ -12,7 +13,8 @@ export class AllCategoriesComponent implements OnInit {
   data: any = [];
 
   constructor(
-    private fireStore: AngularFirestore
+    private fireStore: AngularFirestore,
+    private backService: BackNavigateService
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,18 @@ export class AllCategoriesComponent implements OnInit {
         this.data.push(item);
       });
     });    
+  }
+
+  deleteCategory(id) {
+    if (confirm('Delete?')) {
+      this.fireStore.collection(this.categoryCollection).doc(id).delete();
+      this.data = [];
+      this.getCategories();
+    }
+  }
+
+  backEnabled() {
+    this.backService.toggleBackState();
   }
 
 }

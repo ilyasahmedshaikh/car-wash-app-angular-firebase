@@ -17,7 +17,7 @@ export class AddPackageComponent implements OnInit {
 
   packageCollection: string = "packages";
   categories: any = [];
-  data: any = [];
+  data: any = '';
   selectedCategory: any = {};
 
   preview: any = "../../../../assets/img/img-upload-icon.png";
@@ -32,11 +32,24 @@ export class AddPackageComponent implements OnInit {
     private fireStore: AngularFirestore,
     private storage: AngularFireStorage,
     private fb: FormBuilder
-  ) {}
+  ) {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.data = this.router.getCurrentNavigation().extras.state.data;
+    }
+  }
 
   ngOnInit(): void {
     this.formInit();
     this.getCategories();
+
+    if (this.data) {
+      this.preview = this.data.image;
+      this.programForm.patchValue({
+        name: this.data.name,
+        price: this.data.price,
+        category: this.data.category
+      })
+    }
   }
 
   formInit() {
@@ -107,6 +120,24 @@ export class AddPackageComponent implements OnInit {
         this.categories.push(item);
       });
     });
+  }
+
+  updatePackage() {
+    console.log(this.programForm.value);
+    
+    this.fireStore.collection(this.packageCollection).doc(this.data.id).update({
+      image: this.preview,
+      name: this.programForm.value.name,
+      price: this.programForm.value.price,
+      category: this.selectedCategory,
+    })
+    .then(res => {
+      alert('Category Updated');
+      this.router.navigateByUrl("/admin/all-categories");
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 
 }

@@ -11,6 +11,7 @@ export class AllCategoriesComponent implements OnInit {
 
   categoryCollection: string = "categories";
   data: any = [];
+  somethingWrong: boolean = false;
 
   constructor(
     private fireStore: AngularFirestore,
@@ -19,6 +20,10 @@ export class AllCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
+
+    setTimeout(item => {
+      this.somethingWrong = true;
+    }, 5000);
   }
 
   getCategories() {

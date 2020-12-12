@@ -11,6 +11,7 @@ export class AllDetailersComponent implements OnInit {
 
   data: any = [];
   usersCollection: string = "users";
+  somethingWrong: boolean = false;
 
   constructor(
     private fireStore: AngularFirestore,
@@ -19,6 +20,10 @@ export class AllDetailersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+
+    setTimeout(item => {
+      this.somethingWrong = true;
+    }, 5000);
   }
 
   async getUsers() {

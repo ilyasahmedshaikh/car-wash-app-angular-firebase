@@ -4,7 +4,7 @@
             <h1>Service Requests</h1>
         </div>
 
-        <div class="card mt-4" *ngFor="let item of data" routerLink="/service-request/service-request-details" [state]="{ data: item}">
+        <div class="card mt-4" *ngFor="let item of data" routerLink="/service-request/service-request-details" [state]="{ data: item}" (click)="backEnabled()">
             <div class="row card-body">
                 <div class="col-10 text-section">
                     <h5 class="card-title">{{item.package.name}}</h5>
@@ -19,8 +19,13 @@
             </div>
         </div>
 
-        <div class="text-center pt-5" *ngIf="data.length == 0">
-            <img src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
+        <div class="text-center pt-5" *ngIf="data.length == 0 && !somethingWrong">
+            <img class="content-loading" src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
+        </div>
+
+        <div class="text-center pt-5" *ngIf="data.length == 0 && somethingWrong">
+            <img class="no-data" src="../../../../assets/img/no-data.png" alt="No Data" />
+            <a (click)="getCategories()" class="rounded-btn w-100 mt-4">Try Again</a>
         </div>
     </div>
 </div>

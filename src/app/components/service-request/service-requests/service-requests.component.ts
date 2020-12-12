@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BackNavigateService } from '../../../core/services/back-navigate/back-navigate.service';
 
 @Component({
   selector: 'app-service-requests',
@@ -13,16 +14,22 @@ export class ServiceRequestsComponent implements OnInit {
   data: any = [];
 
   serviceRequests: string = "service-requests";
+  somethingWrong: boolean = false;
 
   loading: any = "../../../../assets/img/loading.gif";
 
   constructor(
     private fireStore: AngularFirestore,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private backService: BackNavigateService
   ) { }
 
   ngOnInit(): void {
     this.getServiceRequests();
+
+    setTimeout(item => {
+      this.somethingWrong = true;
+    }, 5000);
   }
 
   getServiceRequests() {
@@ -37,10 +44,15 @@ export class ServiceRequestsComponent implements OnInit {
           package: doc.data()['package'],
           datetime: doc.data()['datetime'],
           payment: doc.data()['payment'],
+          detailer: doc.data()['detailer'],
         }
         this.data.push(item);
       });
     });
+  }
+
+  backEnabled() {
+    this.backService.toggleBackState();
   }
 
 }

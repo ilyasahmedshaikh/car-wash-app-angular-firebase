@@ -17,6 +17,8 @@ export class ServiceRequestDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.data);
+    
   }
 
 }

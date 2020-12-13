@@ -27,7 +27,7 @@
     "@capacitor/core": "^2.4.4",
     "@capacitor/ios": "^2.4.4",
     "angular-cli-ghpages": "^1.0.0-rc.1",
-    "firebase": "^7.0.0 || ^8.0.0",
+    "firebase": "^8.2.0",
     "ng-simple-slideshow": "^1.2.9",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "~6.6.0",

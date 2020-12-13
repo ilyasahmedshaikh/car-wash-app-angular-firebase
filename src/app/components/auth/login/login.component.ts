@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
             contact: doc.data()['contact'],
             email: doc.data()['email'],
             user_type: doc.data()['user_type'],
+            device_token: doc.data()['device_token'],
           }
 
           if (item.email == email) {

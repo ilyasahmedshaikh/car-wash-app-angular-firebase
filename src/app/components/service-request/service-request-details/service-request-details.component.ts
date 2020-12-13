@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CheckLoginService } from '../../../core/services/check-login/check-login.service';
+import { FcmNotifyService } from '../../../core/http/fcm/fcm-notify/fcm-notify.service';
+import { GetStatusDescriptionService } from '../../../core/services/get-status-description/get-status-description.service';
 
 @Component({
   selector: 'app-service-request-details',
@@ -21,7 +23,9 @@ export class ServiceRequestDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private fireStore: AngularFirestore,
-    private checkLogin: CheckLoginService
+    private checkLogin: CheckLoginService,
+    private fcmNotify: FcmNotifyService,
+    private statusDescription: GetStatusDescriptionService
   ) {
     this.data = this.router.getCurrentNavigation().extras.state;
   }
@@ -76,16 +80,29 @@ export class ServiceRequestDetailsComponent implements OnInit {
   // 2 - Service Done
   // 3 - Payment Recieved
   updateDetailerStatus(status) {
+    let statusDesc = this.statusDescription.getStatus(status);
+
+    let data = {
+      token: this.data.data.user.device_token,
+      body: statusDesc,
+      title: 'Dirt2Clean - Detailer',
+    }
+    
     this.fireStore.collection(this.serviceRequestCollection).doc(this.data.data.id).update({
       status: status,
     })
     .then(res => {
       alert('Status Updated');
       this.router.navigateByUrl("/service-request");
+      this.notify(data);
     })
     .catch(e => {
       console.log(e);
     })
+  }
+
+  notify(data) {
+    this.fcmNotify.Notify(data);
   }
 
 }

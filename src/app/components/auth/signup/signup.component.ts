@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
 
   programForm: FormGroup;
   usersCollection: string = "users";
-  loadingImg: any = "../../../../assets/img/loading.gif";
+  loadingImg: any = "assets/img/loading.gif";
   loader: boolean = false;
 
   constructor(

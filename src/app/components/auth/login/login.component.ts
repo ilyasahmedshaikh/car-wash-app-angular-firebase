@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   
   programForm: FormGroup;
   loginStatus: boolean = false;
-  loadingImg: any = "../../../../assets/img/loading.gif";
+  loadingImg: any = "assets/img/loading.gif";
   loader: boolean = false;
 
   constructor(

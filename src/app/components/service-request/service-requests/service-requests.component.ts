@@ -17,7 +17,7 @@ export class ServiceRequestsComponent implements OnInit {
   serviceRequests: string = "service-requests";
   somethingWrong: boolean = false;
 
-  loading: any = "../../../../assets/img/loading.gif";
+  loading: any = "assets/img/loading.gif";
 
   constructor(
     private fireStore: AngularFirestore,

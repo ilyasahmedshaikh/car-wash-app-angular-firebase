@@ -29,11 +29,11 @@
         </div>
 
         <div class="text-center pt-5" *ngIf="data.length == 0 && !somethingWrong">
-            <img class="content-loading" src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
+            <img class="content-loading" src="assets/img/content-loading.gif" alt="Loading ..." />
         </div>
 
         <div class="text-center pt-5" *ngIf="data.length == 0 && somethingWrong">
-            <img class="no-data" src="../../../../assets/img/no-data.png" alt="No Data" />
+            <img class="no-data" src="assets/img/no-data.png" alt="No Data" />
             <a (click)="getCategories()" class="rounded-btn w-100 mt-4">Try Again</a>
         </div>
     </div>

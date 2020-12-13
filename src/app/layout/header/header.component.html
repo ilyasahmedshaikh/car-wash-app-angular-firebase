@@ -10,14 +10,28 @@
                 <i class="fas fa-chevron-left"></i>
             </a>
         </div>
-        <div class="profile" *ngIf="loginStatus">
-            <img src={{userData.image}} alt="user" />
+        <div class="logout-btn" *ngIf="loginStatus">
+            <a (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>>
         </div>
     </div>
 </div>
 <!-- *ngIf="loginStatus" -->
 <div class="sidebar side" [ngClass]="{'show': sidebar}" *ngIf="loginStatus">
+    
     <ul>
+        <li *ngIf="loginStatus">
+            <div class="profile container">
+                <div class="row">
+                    <div class="col-3 px-0">
+                        <img src={{userData.image}} alt="user" />
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="text-capitalize pt-2 mb-0">{{userData.name}}</p>
+                        <small class="text-white-50">{{userData.email}}</small>
+                    </div>
+                </div>
+            </div>
+        </li>
         <li *ngIf="userType == 'admin'">
             <a (click)="routeTo('/admin/all-detailers')">
                 All Detailers
@@ -66,11 +80,6 @@
         <li>
             <a (click)="routeTo('/profile')">
                 Profile
-            </a>
-        </li>
-        <li>
-            <a (click)="logout()">
-                Logout
             </a>
         </li>
         

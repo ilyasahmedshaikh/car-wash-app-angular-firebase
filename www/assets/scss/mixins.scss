@@ -1,0 +1,37 @@
+@mixin scroll-menu($width, $padding, $background, $color) {
+    background-color: $background;
+        overflow: auto;
+        white-space: nowrap;
+        .item {
+            display: inline-block;
+            color: $color;
+            text-align: center;
+            padding: $padding;
+            width: $width;
+            &.active {
+                border-bottom: 3px solid $color;
+            }
+        }
+}
+
+@mixin typography($fontSize, $fontWeight, $color, $padding) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+    padding: $padding;
+}
+
+@mixin chip($fontSize, $color) {
+    padding: 3px 6px;
+    border-radius: 25px;
+    font-size: $fontSize;
+    margin: 0 0 0 10px;
+    color: $color;
+}
+
+@mixin img-object-fit($width, $height, $fit, $position) {
+    width: $width;
+    height: $height;
+    object-fit: $fit;
+    object-position: $position;
+}

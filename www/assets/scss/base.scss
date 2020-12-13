@@ -1,0 +1,84 @@
+@import './colours';
+
+body {
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p ,ul {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: 20px 0 0 0;
+}
+
+.input-box {
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.form-control {
+    font-size: 15px;
+    border: 1px solid #e7e7e7 !important;
+}
+
+textarea:focus,
+select,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: none;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.form-control:focus {
+    border-color: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.main-header-space {
+    position: relative;
+    top: 55px;
+}
+
+.loading {
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+.no-data {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.content-loading {
+    width: 300px;
+    display: block;
+    margin: auto;
+}

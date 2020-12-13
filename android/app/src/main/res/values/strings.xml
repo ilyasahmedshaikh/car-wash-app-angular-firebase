@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dirt2Clean</string>
+    <string name="title_activity_main">Dirt2Clean</string>
+    <string name="package_name">com.dirt2clean.app</string>
+    <string name="custom_url_scheme">com.dirt2clean.app</string>
+</resources>

@@ -1,0 +1,13 @@
+{
+  "appId": "com.dirt2clean.app",
+  "appName": "Dirt2Clean",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

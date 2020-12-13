@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { CheckLoginService } from '../../../core/services/check-login/check-login.service';
 import { BackNavigateService } from '../../../core/services/back-navigate/back-navigate.service';
 
 @Component({
@@ -21,6 +22,7 @@ export class ServiceRequestsComponent implements OnInit {
   constructor(
     private fireStore: AngularFirestore,
     private fb: FormBuilder,
+    private checkLogin: CheckLoginService,
     private backService: BackNavigateService
   ) { }
 
@@ -32,23 +34,45 @@ export class ServiceRequestsComponent implements OnInit {
     }, 5000);
   }
 
+  getUserData() {
+    return this.checkLogin.getUserData();
+  }
+
   getServiceRequests() {
-    this.fireStore.collection(this.serviceRequests).get().subscribe((res) => {
-      res.docs.forEach((doc) => {
-        let item = {
-          id: doc.id,
-          fullName: doc.data()['fullName'],
-          mobile: doc.data()['mobile'],
-          location: doc.data()['location'],
-          category: doc.data()['category'],
-          package: doc.data()['package'],
-          datetime: doc.data()['datetime'],
-          payment: doc.data()['payment'],
-          detailer: doc.data()['detailer'],
-        }
-        this.data.push(item);
+    if (this.getUserData().user_type != 'admin') {
+      this.fireStore.collection(this.serviceRequests, ref => ref.where('user.email', '==', this.getUserData().email)).get().subscribe((res) => {
+        res.docs.forEach((doc) => {
+          let item = {
+            id: doc.id,
+            user: doc.data()['user'],
+            location: doc.data()['location'],
+            category: doc.data()['category'],
+            package: doc.data()['package'],
+            datetime: doc.data()['datetime'],
+            payment: doc.data()['payment'],
+            detailer: doc.data()['detailer'],
+          }
+          this.data.push(item);
+        });
       });
-    });
+    }
+    else {
+      this.fireStore.collection(this.serviceRequests).get().subscribe((res) => {
+        res.docs.forEach((doc) => {
+          let item = {
+            id: doc.id,
+            user: doc.data()['user'],
+            location: doc.data()['location'],
+            category: doc.data()['category'],
+            package: doc.data()['package'],
+            datetime: doc.data()['datetime'],
+            payment: doc.data()['payment'],
+            detailer: doc.data()['detailer'],
+          }
+          this.data.push(item);
+        });
+      });
+    }
   }
 
   backEnabled() {

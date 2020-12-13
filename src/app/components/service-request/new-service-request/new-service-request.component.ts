@@ -38,8 +38,8 @@ export class NewServiceRequestComponent implements OnInit {
 
   formInit() {
     this.programForm = this.fb.group({
-      fullName: ['', Validators.required],
-      mobile: ['', Validators.required],
+      fullName: [ this.checkLogin.getUserData().name, Validators.required],
+      mobile: [this.checkLogin.getUserData().contact, Validators.required],
       location: ['', Validators.required],
       category: ['', Validators.required],
       package: ['', Validators.required],
@@ -60,10 +60,13 @@ export class NewServiceRequestComponent implements OnInit {
     }
   }
 
-  serviceRequest() {
+  getUserData() {
+    return this.checkLogin.getUserData();
+  }
+
+  serviceRequest() {    
     this.fireStore.collection(this.serviceRequestCollection).add({
-      fullName: this.programForm.value.fullName,
-      mobile: this.programForm.value.mobile,
+      user: this.getUserData(),
       location: this.programForm.value.location,
       category: this.selectedCategory,
       package: this.selectedPackage,

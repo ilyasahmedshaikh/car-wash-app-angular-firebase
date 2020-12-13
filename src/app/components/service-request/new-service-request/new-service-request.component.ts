@@ -64,6 +64,11 @@ export class NewServiceRequestComponent implements OnInit {
     return this.checkLogin.getUserData();
   }
 
+  // Status Types
+  // 0 - Request Received
+  // 1 - Arrived at Destination
+  // 2 - Service Done
+  // 3 - Payment Recieved
   serviceRequest() {    
     this.fireStore.collection(this.serviceRequestCollection).add({
       user: this.getUserData(),
@@ -73,6 +78,7 @@ export class NewServiceRequestComponent implements OnInit {
       datetime: this.programForm.value.datetime,
       payment: this.programForm.value.payment,
       detailer: 'not-assigned',
+      status: 0
     })
     .then(res => {
       // console.log(res);

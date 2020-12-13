@@ -70,4 +70,22 @@ export class ServiceRequestDetailsComponent implements OnInit {
     })
   }
 
+  // Status Types
+  // 0 - Request Received
+  // 1 - Arrived at Destination
+  // 2 - Service Done
+  // 3 - Payment Recieved
+  updateDetailerStatus(status) {
+    this.fireStore.collection(this.serviceRequestCollection).doc(this.data.data.id).update({
+      status: status,
+    })
+    .then(res => {
+      alert('Status Updated');
+      this.router.navigateByUrl("/service-request");
+    })
+    .catch(e => {
+      console.log(e);
+    })
+  }
+
 }

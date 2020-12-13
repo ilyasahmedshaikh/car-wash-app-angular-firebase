@@ -39,7 +39,7 @@ export class ServiceRequestsComponent implements OnInit {
   }
 
   getServiceRequests() {
-    if (this.getUserData().user_type != 'admin') {
+    if (this.getUserData().user_type == 'user') {
       this.fireStore.collection(this.serviceRequests, ref => ref.where('user.email', '==', this.getUserData().email)).get().subscribe((res) => {
         res.docs.forEach((doc) => {
           let item = {
@@ -51,12 +51,33 @@ export class ServiceRequestsComponent implements OnInit {
             datetime: doc.data()['datetime'],
             payment: doc.data()['payment'],
             detailer: doc.data()['detailer'],
+            status: doc.data()['status'],
           }
           this.data.push(item);
         });
       });
     }
-    else {
+    
+    if (this.getUserData().user_type == 'detailer') {
+      this.fireStore.collection(this.serviceRequests, ref => ref.where('detailer.email', '==', this.getUserData().email)).get().subscribe((res) => {
+        res.docs.forEach((doc) => {
+          let item = {
+            id: doc.id,
+            user: doc.data()['user'],
+            location: doc.data()['location'],
+            category: doc.data()['category'],
+            package: doc.data()['package'],
+            datetime: doc.data()['datetime'],
+            payment: doc.data()['payment'],
+            detailer: doc.data()['detailer'],
+            status: doc.data()['status'],
+          }
+          this.data.push(item);
+        });
+      });
+    }
+
+    if (this.getUserData().user_type == 'admin') {
       this.fireStore.collection(this.serviceRequests).get().subscribe((res) => {
         res.docs.forEach((doc) => {
           let item = {
@@ -68,6 +89,7 @@ export class ServiceRequestsComponent implements OnInit {
             datetime: doc.data()['datetime'],
             payment: doc.data()['payment'],
             detailer: doc.data()['detailer'],
+            status: doc.data()['status'],
           }
           this.data.push(item);
         });

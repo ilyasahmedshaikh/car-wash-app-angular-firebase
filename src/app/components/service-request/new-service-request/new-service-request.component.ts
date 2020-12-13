@@ -34,12 +34,19 @@ export class NewServiceRequestComponent implements OnInit {
   ngOnInit(): void {
     this.formInit();
     this.ifLogin();
+
+    if (this.loginStatus) {
+      this.programForm.patchValue({
+        fullName: this.checkLogin.getUserData().name,
+        mobile: this.checkLogin.getUserData().contact
+      })
+    }
   }
 
   formInit() {
     this.programForm = this.fb.group({
-      fullName: [ this.checkLogin.getUserData().name, Validators.required],
-      mobile: [this.checkLogin.getUserData().contact, Validators.required],
+      fullName: ['', Validators.required],
+      mobile: ['', Validators.required],
       location: ['', Validators.required],
       category: ['', Validators.required],
       package: ['', Validators.required],
@@ -102,6 +109,9 @@ export class NewServiceRequestComponent implements OnInit {
   ifLogin() {
     this.checkLogin.status.subscribe(res => {
       this.loginStatus = res;
+
+      console.log(this.loginStatus);
+      
       
       if (!this.loginStatus) {
         this.router.navigateByUrl('/auth/login');

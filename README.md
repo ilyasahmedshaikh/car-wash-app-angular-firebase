@@ -1,4 +1,4 @@
-# AngularBoilerplate
+# carwash-app built with Angular & Firebase
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 # Serve ng App on port

@@ -108,13 +108,13 @@
 }
 
 .profile {
-    position: absolute;
-    right: 10px;
-    top: 8px;
+    position: relative;
     img {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
     }
 }
 
@@ -142,4 +142,12 @@
 
 .back-btn a {
     color: $white;
+    position: absolute;
+    left: 5%;
+}
+
+.right-btn a {
+    color: $white;
+    position: absolute;
+    right: 5%;
 }

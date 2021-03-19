@@ -39,12 +39,14 @@
                             <div class="content py-2">
                                 <h5 class="package">{{item.name}}</h5>
                                 <p class="price text-muted">Rs. {{item.price}}</p>
-
+                                
                                 <div class="row">
-                                    <div class="col-12 icons">
-                                        <a routerLink="/admin/add-package"><i class="fas fa-eye"></i></a>
-                                        <a routerLink="/admin/add-package"><i class="px-4 fas fa-pencil-alt"></i></a>
-                                        <a><i class="fas fa-trash-alt"></i></a>
+                                    <div class="col-6">
+                                        <small class="text-muted">{{item.category[0].name}}</small>
+                                    </div>
+                                    <div class="col-6 icons">
+                                        <a routerLink="/admin/add-package" [state]="{ data: item}" (click)="backEnabled()"><i class="px-4 fas fa-pencil-alt"></i></a>
+                                        <a (click)="deletePackage(item.id)"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -54,8 +56,13 @@
             </div>
         </div>
 
-        <div class="text-center pt-5" *ngIf="data.length == 0">
-            <img src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
+        <div class="text-center pt-5" *ngIf="data.length == 0 && !somethingWrong">
+            <img class="content-loading" src="../../../../assets/img/content-loading.gif" alt="Loading ..." />
+        </div>
+
+        <div class="text-center pt-5" *ngIf="data.length == 0 && somethingWrong">
+            <img class="no-data" src="../../../../assets/img/no-data.png" alt="No Data" />
+            <a (click)="getPackages()" class="rounded-btn w-100 mt-4">Try Again</a>
         </div>
 
     </div>

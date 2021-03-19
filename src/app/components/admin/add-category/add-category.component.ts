@@ -16,7 +16,7 @@ export class AddCategoryComponent implements OnInit {
   programForm: FormGroup;
 
   categoryCollection: string = "categories";
-  data: any = [];
+  data: any = '';
 
   preview: any = "../../../../assets/img/img-upload-icon.png";
   loading: any = "../../../../assets/img/loading.gif";
@@ -30,10 +30,21 @@ export class AddCategoryComponent implements OnInit {
     private fireStore: AngularFirestore,
     private storage: AngularFireStorage,
     private fb: FormBuilder
-  ) {}
+  ) {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.data = this.router.getCurrentNavigation().extras.state.data;
+    }
+  }
 
   ngOnInit(): void {
     this.formInit();
+
+    if (this.data) {
+      this.preview = this.data.image;
+      this.programForm.patchValue({
+        name: this.data.name,
+      })
+    }
   }
 
   formInit() {
@@ -81,6 +92,20 @@ export class AddCategoryComponent implements OnInit {
       })
     )
     .subscribe();
+  }
+
+  updateCategory() {
+    this.fireStore.collection(this.categoryCollection).doc(this.data.id).update({
+      image: this.preview,
+      name: this.programForm.value.name,
+    })
+    .then(res => {
+      alert('Category Updated');
+      this.router.navigateByUrl("/admin/all-categories");
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 
 }

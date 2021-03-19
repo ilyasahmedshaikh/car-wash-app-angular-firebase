@@ -67,8 +67,14 @@ export class LoginComponent implements OnInit {
 
       this.checkLogin.setLoginStatus(true);
       this.router.navigateByUrl('/homepage');
+
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     })
     .catch(err => {
+      this.loader = false;
+      alert(err.message);
       console.log('Something went wrong: ', err.message);
     });
   }

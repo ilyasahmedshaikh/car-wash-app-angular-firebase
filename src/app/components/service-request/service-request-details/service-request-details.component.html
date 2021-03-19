@@ -7,12 +7,12 @@
         <form class="pt-4">
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Name</label></small>
-                <p>{{data.data.name}}</p>
+                <p class="text-capitalize">{{data.data.user.name}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Contact</label></small>
-                <p>{{data.data.mobile}}</p>
+                <p>{{data.data.user.contact}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
@@ -21,18 +21,18 @@
             </div>
               
             <div class="form-group bg-light py-2 px-3">
-                <small><label class="text-muted mb-0">Select Category</label></small>
+                <small><label class="text-muted mb-0">Selected Category</label></small>
                 <p>{{data.data.category.name}}</p>
             </div>
 
             <div class="form-group bg-light py-2 px-3">
-                <small><label class="text-muted mb-0">Select Package</label></small>
+                <small><label class="text-muted mb-0">Selected Package</label></small>
                 <p>{{data.data.package.name}}</p>
             </div>
     
             <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Date & Time</label></small>
-                <p>{{data.data.datetime}}</p>
+                <p>{{data.data.datetime | date:'medium'}}</p>
             </div>
             
             <div class="form-group bg-light py-2 px-3">
@@ -41,16 +41,60 @@
             </div>
 
             <div class="form-group bg-light py-2 px-3">
+                <small><label class="text-muted mb-0">Status</label></small>
+                <p *ngIf="data.data.status != 3">
+                    <small class="pr-2"><i class="fas fa-hourglass-half text-warning"></i></small>
+                    <span *ngIf="data.data.status == 0">Request Received</span>
+                    <span *ngIf="data.data.status == 1">Arrived at Destination</span>
+                    <span *ngIf="data.data.status == 2">Service Done</span>
+                </p>
+                <p *ngIf="data.data.status == 3">
+                    <small class="pr-2"><i class="fas fa-check-circle text-success"></i></small>
+                    <span>Payment Recieved</span>
+                </p>
+            </div>
+
+            <div class="form-group bg-light py-2 px-3">
                 <small><label class="text-muted mb-0">Assigned Detailer</label></small>
                 <p *ngIf="data.data.detailer == 'not-assigned'">Not Assigned Yet</p>
-                <p *ngIf="data.data.detailer != 'not-assigned'">{{data.data.detailer}}</p>
+
+                <p *ngIf="data.data.detailer != 'not-assigned'">
+                    <small><i class="fas fa-user pr-2 text-muted"></i></small>
+                    {{data.data.detailer.name}}
+                </p>
+                <p *ngIf="data.data.detailer != 'not-assigned'">
+                    <small><i class="fas fa-mobile-alt pr-2 text-muted"></i></small>
+                    0{{data.data.detailer.contact}}
+                </p>
+            </div>
+
+            <div class="form-group bg-light py-2 px-3" *ngIf="detailers.length > 0">
+                <select class="custom-select form-control" (change)="selectDetailer($event)">
+                    <option selected>Select Detailer</option>
+                    <option *ngFor="let item of detailers" [value]="item.id">{{item.name}}</option>
+                </select>
             </div>
 
             <div class="btns pt-3">
-                <a class="rounded-btn w-100 mt-2">Assign Now</a>
-                <a class="rounded-btn w-100 mt-2">Arrived at Destination</a>
-                <a class="rounded-btn w-100 mt-2">Service Done</a>
-                <a class="rounded-btn w-100 mt-2">Payment Recieved</a>
+                <div *ngIf="userData.user_type == 'admin'">
+                    <a class="rounded-btn w-100 mt-2" (click)="getDetailers()" *ngIf="detailers.length == 0">Select Detailer</a>
+                    <a class="rounded-btn w-100 mt-2" *ngIf="detailers.length > 0" (click)="updateServiceRequest()">Assign Now</a>
+                </div>
+
+                <div *ngIf="userData.user_type == 'detailer'">
+                    <a class="rounded-btn w-100" *ngIf="!data.data.status || data.data.status == 0" (click)="updateDetailerStatus(1)">Arrived at Destination</a>
+                    <a class="rounded-btn w-100" *ngIf="data.data.status == 1" (click)="updateDetailerStatus(2)">Service Done</a>
+                    <a class="rounded-btn w-100" *ngIf="data.data.status == 2" (click)="updateDetailerStatus(3)">Payment Recieved</a>
+                </div>
+
+                <a class="text-center d-block text-muted mb-2" *ngIf="data.data.status == 3">
+                    <i class="far fa-calendar-check pr-2"></i>
+                    Completed Request
+                </a>
+
+                <div class="text-center" *ngIf="userData.user_type == 'user'">
+                    <a href="tel:03312737076"><i class="fas fa-question-circle"></i> Need Help ?</a>
+                </div>
             </div>
         </form>
     </div>

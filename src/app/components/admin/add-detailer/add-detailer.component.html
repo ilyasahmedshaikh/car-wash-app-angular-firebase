@@ -4,6 +4,10 @@
             <h1 *ngIf="!data">Add Detailer</h1>
             <h1 *ngIf="data">Update Detailer</h1>
         </div>
+
+        <div class="image" *ngIf="data">
+            <img class="w-50 d-block m-auto pt-4" src={{data.image}} />
+        </div>
     
         <form class="pt-4" [formGroup]="programForm">
             <div class="form-group">

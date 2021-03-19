@@ -34,6 +34,13 @@ export class NewServiceRequestComponent implements OnInit {
   ngOnInit(): void {
     this.formInit();
     this.ifLogin();
+
+    if (this.loginStatus) {
+      this.programForm.patchValue({
+        fullName: this.checkLogin.getUserData().name,
+        mobile: this.checkLogin.getUserData().contact
+      })
+    }
   }
 
   formInit() {
@@ -60,16 +67,25 @@ export class NewServiceRequestComponent implements OnInit {
     }
   }
 
-  serviceRequest() {
+  getUserData() {
+    return this.checkLogin.getUserData();
+  }
+
+  // Status Types
+  // 0 - Request Received
+  // 1 - Arrived at Destination
+  // 2 - Service Done
+  // 3 - Payment Recieved
+  serviceRequest() {    
     this.fireStore.collection(this.serviceRequestCollection).add({
-      fullName: this.programForm.value.fullName,
-      mobile: this.programForm.value.mobile,
+      user: this.getUserData(),
       location: this.programForm.value.location,
       category: this.selectedCategory,
       package: this.selectedPackage,
       datetime: this.programForm.value.datetime,
       payment: this.programForm.value.payment,
       detailer: 'not-assigned',
+      status: 0
     })
     .then(res => {
       // console.log(res);
@@ -93,6 +109,9 @@ export class NewServiceRequestComponent implements OnInit {
   ifLogin() {
     this.checkLogin.status.subscribe(res => {
       this.loginStatus = res;
+
+      console.log(this.loginStatus);
+      
       
       if (!this.loginStatus) {
         this.router.navigateByUrl('/auth/login');

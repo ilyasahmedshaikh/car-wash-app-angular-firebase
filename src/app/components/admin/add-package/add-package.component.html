@@ -1,7 +1,8 @@
 <div class="add-package-screen">
 	<div class="container">
 		<div class="heading pt-4">
-			<h1>Add Package</h1>
+			<h1 *ngIf="!data">Add Package</h1>
+			<h1 *ngIf="data">Update Package</h1>
         </div>
 
         <div class="row justify-content-center my-4">
@@ -35,7 +36,8 @@
         </form>
 
         <div class="add-package-btn">
-            <a (click)="addPackage()" class="rounded-btn w-100 mt-4">Add Package</a>
+            <a *ngIf="!data" (click)="addPackage()" class="rounded-btn w-100 mt-4">Add Package</a>
+            <a *ngIf="data" (click)="updatePackage()" class="rounded-btn w-100 mt-4">Update Package</a>
         </div>
 	</div>
 </div>

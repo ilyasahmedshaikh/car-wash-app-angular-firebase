@@ -14,6 +14,8 @@ export class SliderComponent implements OnInit {
   categories: any = [];
   selectedCategory: any = '';
 
+  somethingWrong: boolean = false;
+
   slideConfig = {
     "slidesToShow": 2, 
     "slidesToScroll": 1,
@@ -27,6 +29,10 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
+
+    setTimeout(item => {
+      this.somethingWrong = true;
+    }, 5000);
   }
 
   getCategories() {

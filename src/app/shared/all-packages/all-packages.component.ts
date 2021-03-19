@@ -22,6 +22,8 @@ export class AllPackagesComponent implements OnInit {
   selectedCategory: any = '';
   selectedPackage: any = '';
 
+  somethingWrong: boolean = false;
+
   constructor(
     private fireStore: AngularFirestore,
     private packageService: PackagesService,
@@ -31,6 +33,10 @@ export class AllPackagesComponent implements OnInit {
   ngOnInit(): void {
     this.getPackages();
     this.getSelectedCategory();
+
+    setTimeout(item => {
+      this.somethingWrong = true;
+    }, 5000);
   }
 
   getPackages() {

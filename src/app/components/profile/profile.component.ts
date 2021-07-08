@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   usersCollection: string = "users";
 
   preview: any = "https://i.ibb.co/2MH630J/user.png";
-  loading: any = "../../../../assets/img/loading.gif";
+  loading: any = "assets/img/loading.gif";
   percent: number = 0;
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;

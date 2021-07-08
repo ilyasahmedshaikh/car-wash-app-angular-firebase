@@ -20,8 +20,8 @@ export class AddPackageComponent implements OnInit {
   data: any = '';
   selectedCategory: any = {};
 
-  preview: any = "../../../../assets/img/img-upload-icon.png";
-  loading: any = "../../../../assets/img/loading.gif";
+  preview: any = "assets/img/img-upload-icon.png";
+  loading: any = "assets/img/loading.gif";
   percent: number = 0;
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PackagesService } from '../../core/services/packages/packages.service';
 import { CheckLoginService } from '../../core/services/check-login/check-login.service';
+import { MessagingService } from '../../core/http/messaging/messaging.service';
 
 @Component({
   selector: 'app-homepage',
@@ -17,11 +18,13 @@ export class HomepageComponent implements OnInit {
   constructor(
     private router: Router,
     private packageService: PackagesService,
-    private checkLogin: CheckLoginService
+    private checkLogin: CheckLoginService,
+    private messagingService: MessagingService,
   ) { }
 
   ngOnInit(): void {
     // this.ifLogin();
+    this.permitPushNotifications();
   }
 
   getCategory(data) {
@@ -39,6 +42,12 @@ export class HomepageComponent implements OnInit {
         this.router.navigateByUrl('/auth/login');
       }
     })
+  }
+
+  permitPushNotifications() {
+    this.messagingService.requestPermission();
+    this.messagingService.receiveMessage();
+    let message = this.messagingService.currentMessage;
   }
 
 }

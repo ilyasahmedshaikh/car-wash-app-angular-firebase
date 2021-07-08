@@ -14,7 +14,7 @@ export class AddDetailerComponent implements OnInit {
   data: any;
   programForm: FormGroup;
   usersCollection: string = "users";
-  loading: any = "../../../../assets/img/loading.gif";
+  loading: any = "assets/img/loading.gif";
 
   constructor(
     private fb: FormBuilder,

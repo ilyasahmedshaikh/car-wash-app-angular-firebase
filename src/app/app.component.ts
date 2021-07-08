@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessagingService } from './core/http/messaging/messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-boilerplate';
+
+  constructor(
+    private messagingService: MessagingService,
+  ) { }
+
+  ngOnInit() {
+    // this.permitPushNotifications();
+  }
+
+  permitPushNotifications() {
+    this.messagingService.requestPermission();
+    this.messagingService.receiveMessage();
+    let message = this.messagingService.currentMessage;
+  }
 }

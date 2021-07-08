@@ -46,7 +46,7 @@ export class AddDetailerComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       contact: ['', Validators.required],
-      // password: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 

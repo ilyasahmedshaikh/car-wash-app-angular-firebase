@@ -94,7 +94,7 @@ export class ServiceRequestDetailsComponent implements OnInit {
     .then(res => {
       alert('Status Updated');
       this.router.navigateByUrl("/service-request");
-      this.notify(data);
+      // this.notify(data);
     })
     .catch(e => {
       console.log(e);
